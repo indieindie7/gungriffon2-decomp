@@ -1,0 +1,42 @@
+0x0600e800 func prog2_EntryThunk hand provisional thunk to prog2_Entry
+0x0600e80c func prog2_Entry hand provisional sets stack, copies vector ptr, calls init, returns shifted status
+0x0600ed28 func regtable_WriteShortPairs_2 hand provisional offset/value short pair table writer (copy of PROG1 helper)
+0x0600ed68 func stub_WriteDtLoopOpcodes hand provisional writes opcodes 4f22 4210 7fff into low RAM stub
+0x0600ed94 func dma_RequestCopyWords_2 hand provisional starts DMA copy len/4 words
+0x0600edc4 func dma_WaitIdle_2 hand provisional spins until busy bit clears
+0x0600edd2 func dma_SaveReturnReg_2 hand provisional stores PR into DMA block
+0x0600f294 func input_EdgeTestMaskC0 hand provisional tests button bits 0xc0 of two words, writes result to out array
+0x0600f300 func input_EdgeTestMask30 hand provisional same as input_EdgeTestMaskC0 for bits 0x30
+0x0600f36c func frame_IdleHookIfEnabled hand provisional calls two no-op hooks if flag 0x80 clear
+0x0600f38c func nop_Stub hand provisional empty function
+0x0600f39e func bios_WaitLoopUntilFlag hand provisional loops with BIOS vbr+0xfc call until status flag set
+0x0600f464 func bios_WaitCountdown hand provisional busy wait via BIOS call for param iterations
+0x0600f4c8 func menu_CopyTableBuildItems hand provisional copies 8-byte entries into table and formats text items
+0x0600f54c func menu_SetEntryHalf hand provisional writes high/low halfword of param into selected entry
+0x0600f598 func menu_RunTimedCallback hand provisional runs callback loop with timer, default callback idle hook
+0x0600f608 func menu_RunTimedCallback_b hand provisional twin of menu_RunTimedCallback
+0x0600f68c func cd_LoadAndRunFile hand provisional sets flags, calls file read, starts next program, clears flags
+0x0600f720 func debug_DrawStatusLines hand provisional prints several counters with formatter
+0x0600f7fc func fmt_PrintHexPair hand provisional formats value into hex digits at dest
+0x0600f87a func fmt_FlushPair hand provisional calls formatter twice
+0x0600f8c4 func color_UnpackBytesFromTable hand provisional splits table word into four bytes
+0x0600f918 func text_BuildLineBuffer hand provisional builds string line via lookup table per slot
+0x0600f9a8 func pad_GetPortType hand provisional returns 2/3/4 from port flags
+0x0600f9dc func settings_UnpackFromSave hand provisional copies save-block fields into settings variables
+0x0600fa8c func settings_MapButtonIds hand provisional maps 8 button ids through table into config bytes
+0x0600faca func mem_Copy13Bytes hand provisional copies 13 bytes
+0x0600fb30 func settings_LoadAll hand provisional loads settings from save data into globals
+0x0600fd2c func pad_GetModeBits hand provisional returns 0-3 from pad mode flag bits
+0x0600fd6c func table_Lookup2D hand provisional byte lookup index+row*4
+0x0600fdd0 func menu_HandleCursorMove hand provisional cursor input handling, calls apply routine
+0x0600fef8 func fmt_PrintBcdValue hand provisional converts digits to ASCII
+0x0600ffc4 func menu_FormatSlotEntries hand provisional formats 8 entries of 12 byte text
+0x06010014 func menu_FormatEntryList5_a hand provisional formats 5 entries
+0x06010054 func menu_FormatEntryList5_b hand provisional formats 5 entries variant
+0x060100b0 func pad_ReadDirectionMasks hand provisional builds direction masks from button bits
+0x06010854 func fmt_PrintWithSavedPtr hand provisional calls formatter preserving pointer
+0x06010940 func menu_DrawStringA hand provisional draws menu string using format helper
+0x0601097c func menu_MainLoop hand provisional main menu loop with BIOS wait
+0x06010a24 func menu_DrawStringB hand provisional draws second menu string
+0x06010a9c func gfx_LoadMenuAssets hand provisional decompresses graphics into VDP1/VDP2 RAM
+0x06010b24 func buffer_ClearEveryOtherWord hand provisional zeroes 32 words stride 8

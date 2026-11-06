@@ -1,0 +1,182 @@
+0x0600e800 func prog3_Entry hand provisional thunk to entry body
+0x0600e824 func prog3_RunStep hand provisional calls init, copies state words
+0x0600e960 func sys_FrameUpdate hand provisional large per-frame update using flags at 0x0600a028
+0x0600ecf0 func vdp_SetupScrollTargets hand provisional picks VDP2 targets by param
+0x0600ed80 func scu_DmaCopyRows hand provisional SCU DMA of rows to VDP2 via function pointers
+0x0600edd4 func scu_DmaCopyRowsSimple hand provisional SCU DMA row copy
+0x0600ee14 func table_GetByteByIndex hand provisional indexed byte table read
+0x0600ee48 func pad_MapButtonByCase hand provisional switch mapping on button id
+0x0600eed0 func pad_ScanAny hand provisional scans players for pad state
+0x0600ef20 func mem_CopyShorts hand provisional copies halfword array
+0x0600ef40 func smpc_ResetAndInitPeripherals hand provisional SMPC command sequence
+0x0600f008 func smpc_ReadPadStatus hand provisional reads pad flags
+0x0600f09c func smpc_UpdatePadSlots hand provisional updates pad slot table
+0x0600f100 func smpc_IssueCommand hand provisional waits SF, writes COMREG
+0x0600f128 func pad_CopyConfigToState hand provisional copies config bytes into runtime state
+0x0600f1d0 func pad_RemapButtons hand provisional remaps buttons via table
+0x0600f20e func mem_CopyBytes13 hand provisional copies 13 bytes
+0x0600f268 func pad_InitPlayerSlots hand provisional initializes player slots
+0x0600f4dc func sys_InitCallbackAndRun hand provisional registers callback then runs init
+0x0600f962 func gfx_SetVramPointerInit hand provisional calls counter inc, sets pointer
+0x0600f998 func counter_Increment hand provisional increments global counter
+0x0600f9aa func text_PutStringLoop hand provisional prints string via text function
+0x0600fe64 func vdp_WriteRegPair hand provisional writes register pair to VDP area
+0x0600ff08 func gfx_DecompressToVram hand provisional same decompressor as PROG2
+0x06010fc0 func sys_CallWithIrqMask hand provisional enter critical, call, leave
+0x06011034 func sys_EnterCritical hand provisional masks interrupts with nesting
+0x06011088 func sys_LeaveCritical hand provisional restores mask when nesting zero
+0x060110d4 func sys_HookVectors hand provisional saves and replaces two vectors
+0x06011110 func sys_UnhookVectors hand provisional restores vectors
+0x06011148 func sys_CheckStatusOk hand provisional status != 1
+0x06011188 func sys_Wrap_Off04 hand provisional critical-wrapped table call offset 4
+0x060111fc func sys_Wrap_Off08 hand provisional critical-wrapped offset 8
+0x0601124c func sys_Wrap_Off0c hand provisional critical-wrapped offset 0xc
+0x060112a8 func sys_Wrap_Off10 hand provisional critical-wrapped offset 0x10
+0x06011324 func sys_Wrap_Off14 hand provisional critical-wrapped offset 0x14
+0x06011380 func sys_Wrap_Off18 hand provisional critical-wrapped offset 0x18
+0x060113d8 func sys_Wrap_Off1c hand provisional critical-wrapped offset 0x1c
+0x06011454 func sys_Wrap_Off20 hand provisional critical-wrapped offset 0x20
+0x060114b0 func sys_Wrap_Off24 hand provisional table offset 0x24 with result fixup
+0x06011558 func sh2_GetSrIMask hand provisional returns SR interrupt mask bits
+0x06011590 func sh2_SetSrIMask hand provisional sets SR interrupt mask
+0x060115dc func nop_Stub_115dc hand provisional empty function
+0x060115ec func sh2_GetSr hand provisional returns SR
+0x060119b0 func smpc_PeripheralPoll hand provisional polls SMPC status and reads peripheral data
+0x06011c84 func smpc_PeripheralParse hand provisional large peripheral data parser
+0x06012650 func smpc_CheckLineLimit hand provisional sets state 1 at line limit
+0x0601267c func smpc_CheckSrFlag hand provisional sets state 2 on SR flag
+0x060126b8 func smpc_CopyBytesToBuffer hand provisional copies bytes up to limit
+0x06012730 func smpc_CopyColumns hand provisional copies columns to line buffer
+0x060127b4 func smpc_InitState hand provisional initializes parser state
+0x06012874 func smpc_WaitSf hand provisional waits SF flag
+0x06012900 func smpc_FillBlankLines hand provisional fills lines with blanks
+0x060129fc func smpc_SnapshotState hand provisional copies state vars
+0x06012a78 func smpc_ProcessBlock hand provisional large block processing
+0x06012ee8 func nop_Stub_12ee8 hand provisional empty function
+0x06012ef8 func sh2_GetSr_b hand provisional returns SR
+0x06012f14 func math_ShiftBySelector hand provisional shift by switch selector
+0x06012ff8 func libc_InitPrintfState hand provisional init state block for printf
+0x06013054 func libc_StreamFlushCheck hand provisional checks stream buffer
+0x06013084 func libc_VfprintfSetup hand provisional copies stream fields and calls vfprintf
+0x06013128 func libc_Vfprintf_Wrap hand provisional wrapper to vfprintf
+0x060131b4 func libc_Vfprintf hand provisional large printf formatter
+0x06015198 func libc_FormatFloat hand provisional float formatting for %f/%e/%g
+0x060152c0 func libc_FormatExponent hand provisional formats exponent digits
+0x0601534c func libc_FileWrite hand provisional writes buffer to file
+0x060155b0 func libc_CloseAllFiles hand provisional walks file list calling flush
+0x060156a0 func libc_SetStreamMode hand provisional sets stream mode by string
+0x06015700 func libc_GetLocalePtr hand provisional returns locale pointer
+0x06015710 func libc_SetLocaleWrap hand provisional wrapper using current reent
+0x06015734 func libc_GetLocaleWrap hand provisional wrapper using current reent
+0x06015754 func libc_InitFile hand provisional zeroes file struct fields
+0x0601579c func libc_AllocFile hand provisional allocates file struct
+0x060157f0 func libc_GetFileSlot hand provisional finds or creates file slot
+0x06015898 func libc_FlushAllWrap hand provisional flushes all via callback
+0x060158b4 func libc_FlushAllCurrent hand provisional flush with current reent
+0x060158d4 func libc_InitReent hand provisional initializes reent block
+0x06015950 func libc_InitStdio hand provisional initializes stdio streams
+0x06015a58 func fp_IsNan hand provisional double NaN test
+0x06015a8c func fp_IsNanOrInf hand provisional double NaN or infinity test
+0x06015ab8 func libc_memchr hand provisional finds byte in buffer
+0x06015ae4 func libc_strlen hand provisional string length
+0x06015b08 func libc_PrintfWrap hand provisional printf wrapper with current reent
+0x06015b48 func libc_memmove hand provisional overlap-safe copy
+0x06015b94 func libc_ForEachBlock hand provisional walks block list with callback
+0x06015bf8 func libc_strcmp hand provisional string compare
+0x06015d50 func malloc_AllocBlock hand provisional allocates block from free lists
+0x06015e1c func malloc_Core hand provisional size-class allocation
+0x06015e94 func malloc_Free hand provisional frees block
+0x06015f50 func libc_memset hand provisional fills memory
+0x06015fa4 func libc_FileFlushBuf hand provisional flushes file buffer
+0x060160b4 func bigint_Divide hand provisional big integer divide
+0x0601628c func libc_FormatDouble hand provisional large double formatter
+0x06017694 func libc_Wrap_Sys05 hand provisional reent wrapper for syscall 5
+0x060176cc func libc_Wrap_Sys06 hand provisional reent wrapper for syscall 6
+0x06017700 func libc_Wrap_Sys13 hand provisional reent wrapper for syscall 0x13
+0x06017738 func libc_Wrap_Sys03 hand provisional reent wrapper for syscall 3
+0x06017770 func libc_Wrap_Sys04 hand provisional reent wrapper for syscall 4
+0x060177a8 func libc_Wrap_Sbrk hand provisional reent wrapper for sbrk
+0x060177dc func libc_memcpy hand provisional word-optimized copy
+0x06017878 func libc_Wrap_SysFstat hand provisional reent wrapper for fstat stub
+0x060178b0 func sys_Call03 hand provisional trap call 3
+0x060178d0 func sys_Call13 hand provisional trap call 0x13
+0x060178f0 func sys_Call04 hand provisional trap call 4
+0x06017910 func sys_Call06 hand provisional trap call 6
+0x0601794c func sys_Sbrk hand provisional grows heap
+0x060179a8 func sys_FstatStub hand provisional fills stat field, returns 0
+0x060179b8 func sys_Call05 hand provisional trap call 5
+0x060179d8 func sys_Call08 hand provisional trap call 8
+0x060179f8 func sys_RetMinus1 hand provisional returns -1
+0x06017a04 func sys_RetOne hand provisional returns 1
+0x06017a10 func sys_Exit hand provisional trap call 1
+0x06017a30 func sys_ExitDead hand provisional trap call 1 with 0xdead
+0x06017a54 func sys_RetOne_b hand provisional returns 1
+0x06017a8c func sys_Call0F hand provisional trap call 0xf
+0x06017aac func sys_Call10 hand provisional trap call 0x10
+0x06017ad0 func sys_CallC9 hand provisional trap call
+0x06017af0 func sys_Call02 hand provisional trap call 2
+0x06017b08 func sys_CallCA hand provisional trap call
+0x06017b24 func sys_Call3B hand provisional trap call 0x3b
+0x06017b44 func sys_Call0B hand provisional trap call 0xb
+0x06017b60 func sys_Call2A hand provisional trap call 0x2a
+0x06017b7c func bigint_Alloc hand provisional allocates big integer from free list
+0x06017c00 func bigint_Free hand provisional returns big integer to free list
+0x06017c28 func bigint_MulAdd hand provisional multiply by small and add
+0x06017cd8 func bigint_ParseDigits hand provisional builds big integer from digits
+0x06017d80 func bits_CountLeadingZeros hand provisional counts leading zero bits
+0x06017dec func bits_CountTrailingZeros hand provisional counts trailing zero bits
+0x06017e6c func bigint_FromInt hand provisional big integer from int
+0x06017e90 func bigint_Multiply hand provisional big integer multiply
+0x06018004 func bigint_MulPow5 hand provisional multiply by power of 5
+0x060180c0 func bigint_ShiftLeft hand provisional shift left by bits
+0x060181a8 func bigint_Compare hand provisional compare two big integers
+0x060181e8 func bigint_Subtract hand provisional subtract
+0x06018378 func bigint_ToDouble hand provisional convert to double
+0x06018468 func bigint_FromDouble hand provisional convert from double
+0x0601857c func bigint_DoubleSplit hand provisional splits double to parts
+0x06018788 func sys_Trap hand provisional trap through vbr+0x88
+0x0601879c func libc_InstallExitHandlers hand provisional installs exit handler pointers
+0x060187c0 func libc_calloc hand provisional allocate and clear
+0x06018800 func libc_ExitWrap hand provisional exit wrapper with current reent
+0x06018820 func libc_ExitCurrent hand provisional exit with current code
+0x06018854 func libc_Wrap_ExitDead hand provisional reent wrapper for exit call
+0x060188b4 func fp_ToIntTruncate hand provisional truncating conversion
+0x06018a30 func fp_UnpackDouble hand provisional unpacks double fields
+0x06018b14 func fp_Add hand provisional double add
+0x06018cf8 func fp_AddWrap hand provisional double add wrapper
+0x06018d58 func fp_SubWrap hand provisional double sub wrapper
+0x06018ddc func fp_Mul hand provisional double multiply
+0x0601910c func fp_MulWrap hand provisional double multiply wrapper
+0x06019174 func fp_Div hand provisional double divide
+0x060192cc func fp_DivWrap hand provisional double divide wrapper
+0x0601932c func fp_Compare hand provisional double compare
+0x06019418 func fp_EqWrap hand provisional double equal wrapper
+0x06019460 func fp_NeWrap hand provisional double not-equal wrapper
+0x060194c0 func fp_LtWrap hand provisional double less-than wrapper
+0x06019520 func fp_LeWrap hand provisional double less-or-equal wrapper
+0x06019584 func fp_GtWrap hand provisional double greater-than wrapper
+0x060195e8 func fp_GeWrap hand provisional double greater-or-equal wrapper
+0x06019648 func fp_CmpWrap hand provisional double compare wrapper
+0x060196b0 func fp_FromInt hand provisional int to double
+0x0601973c func fp_ToInt hand provisional double to int
+0x060197d0 func fp_ToIntWrap hand provisional double to int wrapper
+0x06019808 func fp_PackWrap hand provisional pack double wrapper
+0x06019838 func fp_ToUint hand provisional double to unsigned
+0x06019914 func math_ShiftBySelector_b hand provisional shift by switch selector
+0x06019a7c func math_Shift64 hand provisional 64-bit shift
+0x06019af4 func fp_PackFloat hand provisional packs float
+0x06019bcc func fp_UnpackSingle hand provisional unpacks float fields
+0x06019c60 func fp_AddSingle hand provisional float add
+0x06019df8 func fp_AddSingleWrap hand provisional float add wrapper
+0x0601a0ec func fp_CompareSingle hand provisional float compare
+0x0601a1b8 func fp_EqSingleWrap hand provisional float equal wrapper
+0x0601a1fc func fp_NeSingleWrap hand provisional float not-equal wrapper
+0x0601a258 func fp_LtSingleWrap hand provisional float less-than wrapper
+0x0601a2b4 func fp_LeSingleWrap hand provisional float less-or-equal wrapper
+0x0601a314 func fp_GtSingleWrap hand provisional float greater-than wrapper
+0x0601a374 func fp_GeSingleWrap hand provisional float greater-or-equal wrapper
+0x0601a3d0 func fp_CmpSingleWrap hand provisional float compare wrapper
+0x0601a4a0 func fp_ToIntSingle hand provisional float to int
+0x0601a52c func fp_IsZeroSingle hand provisional float zero test
+0x0601a560 func fp_PackSingle hand provisional packs float parts
+0x0601a584 func fp_SingleToDoubleWrap hand provisional float to double wrapper

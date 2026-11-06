@@ -1,0 +1,56 @@
+0x0600a000 func loader_Entry hand provisional thunk to loader_Boot
+0x0600a108 func loader_Boot hand provisional boot init clears regs, sets vectors
+0x0600a16c func loader_JumpThunk hand provisional jump via saved pr
+0x0600a1dc func loader_CallBiosInit hand provisional calls BIOS init pointers
+0x0600a280 func loader_SetBufferPtrs hand provisional stores buffer pointers
+0x0600a2dc func cd_CommandStub hand provisional BIOS command trampoline, loop body
+0x0600a31c func loader_LaunchProgram hand provisional loads and jumps to program at 0x06010000
+0x0600a4bc func smpc_WaitSfClear hand provisional waits SMPC SF flag clear
+0x0600a4ca func smpc_SaveReturnAddr hand provisional stores pr into SMPC area
+0x0600ac84 func smpc_WaitCommandDone hand provisional waits command completion
+0x0600acf8 func smpc_IssueCommandBlock hand provisional issues SMPC command block
+0x0600aefc func scu_WriteRegPair hand provisional writes SCU register pair
+0x0600af2c func vdp1_WriteWordPair hand provisional writes VDP1 words from struct
+0x0600af50 func smpc_ReadTimeBlock hand provisional reads SMPC time via helper
+0x0600afb8 func smpc_ReadByteA hand provisional reads SMPC register byte A
+0x0600afd8 func smpc_ReadByteB hand provisional reads SMPC register byte B
+0x0600aff8 func smpc_ReadClock hand provisional reads clock fields
+0x0600b034 func smpc_ParseClockBcd hand provisional parses BCD clock into struct
+0x0600b092 func math_BcdToBinary hand provisional converts BCD byte to binary
+0x0600b0a6 func text_FormatDigits hand provisional formats number to chars
+0x0600b118 func rand_Next hand provisional linear congruential random
+0x0600b12c func nop_Stub_b12c hand provisional empty function
+0x0600b1be func list_WalkNodes hand provisional walks linked nodes
+0x0600bc48 func sys_SetIrqMaskAndCall hand provisional wrapper using irq mask helpers
+0x0600bd40 func sh2_GetSrIMask hand provisional returns SR interrupt mask bits
+0x0600bd78 func sh2_SetSrIMask hand provisional sets SR interrupt mask
+0x0600bdc4 func nop_Stub_bdc4 hand provisional empty function
+0x0600bdd4 func sh2_GetSr hand provisional returns SR
+0x0600bdf0 func scu_SetIrqMaskReg hand provisional writes SCU interrupt mask
+0x0600bf84 func cd_CheckStatus hand provisional checks command status
+0x0600c00c func cd_WaitReady hand provisional waits until ready
+0x0600c104 func cd_DecodeTocEntry hand provisional decodes TOC entry bytes
+0x0600c1b4 func cd_ReadSectorCmd hand provisional issues read command
+0x0600c200 func cd_SendCommandA hand provisional sends command with stack block
+0x0600c284 func cd_WaitResponse hand provisional waits for response
+0x0600c320 func cd_CheckRangeOk hand provisional range check returns flag
+0x0600c350 func cd_TestStatusBits hand provisional tests status bits via cd command
+0x0600c388 func cd_ReadWithTimeout hand provisional wrapper with timeout constant
+0x0600c3c0 func cd_ReadLoop hand provisional loops until read completes
+0x0600c418 func cd_SeekWrap hand provisional seek wrapper
+0x0600c450 func cd_SeekCore hand provisional seek core, clears outputs
+0x0600c4d0 func cd_StopCmd hand provisional stop command
+0x0600c568 func cd_SetSpeedByIndex hand provisional sets speed by index
+0x0600c5dc func cd_InitDrive hand provisional initializes drive
+0x0600c670 func cd_ResetDrive hand provisional resets drive
+0x0600c6cc func cd_CallVector0 hand provisional calls BIOS vector with 0
+0x0600c6f0 func cd_CheckDiscPresent hand provisional checks disc present
+0x0600c75c func cd_TestStatusBitsB hand provisional tests status bits via cd command
+0x0600c794 func cd_WaitStatus hand provisional waits status
+0x0600c7ec func cd_GetStatus hand provisional gets status
+0x0600c86c func cd_ClearFlags hand provisional clears flags via command 0x17
+0x0600c89c func cd_InitBuffers hand provisional initializes buffer pointer
+0x0600c928 func sys_SetIrqMask hand provisional sets SR mask using helpers
+0x0600c974 func nop_Stub_c974 hand provisional empty function
+0x0600c984 func sh2_GetSr_b hand provisional returns SR
+0x0600ca74 func nop_Stub_ca74 hand provisional empty function

@@ -1,0 +1,60 @@
+0x06010024 func logo_InitBiosVectors hand provisional calls vector table fns 0x40,0x41
+0x06010080 func logo_InitVideoState hand provisional large video init
+0x06010578 func logo_ResetFixedVars hand provisional sets fixed vars
+0x06010610 func logo_SetupDisplay hand provisional large display setup, calls vdp2_SetDisplayModeBits
+0x06010b1c func logo_ClearState hand provisional clears state vars
+0x06010b86 func logo_LoadGfxBlockA hand provisional copies gfx to VDP2 via mem_CopyWords16
+0x06010cba func logo_LoadPaletteA hand provisional copies palette words
+0x06010db8 func logo_ResetCounters hand provisional resets counters
+0x06010e56 func logo_DecompressToVram hand provisional decompress call to VDP1 VRAM
+0x06010ef8 func logo_SetupVdp2Pages hand provisional sets VDP2 page pointers
+0x06010ff4 func math_FixedMulSigned hand provisional fixed mul with sign handling
+0x06011070 func math_FixedMulSigned2 hand provisional fixed mul via helper
+0x06011138 func logo_WaitLoop hand provisional loops on helper until done
+0x06011180 func logo_InitFadeVars hand provisional sets fixed-point fade vars
+0x06011210 func logo_UpdateFade hand provisional fade update using fixed mul
+0x060115ce func logo_MainSequence hand provisional main logo sequence stepper
+0x06011c00 func const_StoreDoubleTenth hand provisional stores double constant 0.1
+0x06011c0c func logo_ClearScuBits hand provisional clears SCU register bits
+0x06011cb6 func logo_ClearReg0080 hand provisional clears register then calls handler
+0x06011ce0 func logo_SetTableEntry hand provisional stores value in indexed table
+0x06011d22 func logo_BiosCallA hand provisional BIOS vector call wrapper
+0x06011dde func logo_BiosCallB hand provisional BIOS vector call wrapper
+0x06011e54 func gfx_SetupBlockCopy hand provisional sets up block copy by param
+0x06011fc8 func gfx_CopyBlockBits hand provisional copies bits based on mask
+0x060120ec func logo_UpdateScrollLarge hand provisional large scroll update
+0x06012a5e func logo_ProcessCmdBytes hand provisional processes command byte stream
+0x060133b0 func logo_RunCommandQueue hand provisional large command queue runner
+0x0601383e func logo_QueueCommand hand provisional validates and queues command
+0x06013ae4 func logo_EnqueueWord hand provisional enqueues word
+0x06013b6a func logo_SetPendingFlag hand provisional sets pending flag
+0x06013bc0 func logo_AdvanceQueue hand provisional advances queue pointers
+0x06013c66 func logo_ServiceQueue hand provisional services queue
+0x06013cd8 func logo_CallCdHandler hand provisional calls cd handler pointer
+0x06013d5a func logo_CheckState1 hand provisional checks state flag
+0x06013e90 func logo_ResetCdState hand provisional resets state with interrupts masked
+0x06013fc8 func logo_WriteVdpRegs hand provisional writes VDP registers
+0x06014046 func logo_StoreParams hand provisional stores params to globals
+0x06014128 func logo_ClearCdFlag hand provisional clears flag with interrupts masked
+0x060141a0 func logo_CopyWithMask hand provisional copies words with mask via mem_CopyWords16
+0x060142cc func cd_ReadSectorsLike hand provisional large cd/sector routine
+0x060144b4 func cd_StartTransfer hand provisional starts transfer with interrupts masked
+0x0601463c func cd_PollTransfer hand provisional polls transfer returns 64-bit
+0x060148a4 func cd_ReadRegBlock hand provisional reads register block
+0x06014a44 func cd_CheckStatusBit hand provisional checks status bit
+0x06014ac2 func cd_ReadRegMasked hand provisional reads register and mask
+0x06014d28 func logo_FillBuffer hand provisional fills buffer with spaces
+0x0601585c func logo_ClearScratch hand provisional clears scratch memory
+0x060158a0 func cache_PurgeRange hand provisional purges cache lines for range
+0x06015992 func scu_ClearReg hand provisional clears SCU register
+0x06015ab0 func logo_WaitLoopB hand provisional loops on state var
+0x06015b20 func fp_DoubleToFixedA hand provisional converts via div
+0x06015b90 func fp_DoubleToFixedB hand provisional converts via div
+0x06015c02 func math_FixedMulSigned3 hand provisional fixed mul with sign handling
+0x06052ce0 func math_CosLookupShift hand provisional cosine lookup shifted
+0x06052d06 func math_SinLookupShift hand provisional sine lookup shifted
+0x06052d34 func math_AngleFoldA hand provisional angle fold step
+0x06052d38 func math_AngleFoldB hand provisional angle fold
+0x0605391c func console_CopyLineState hand provisional copies console state block
+0x0605457c func math_StoreMulResult hand provisional stores MACH MACL
+0x06054584 func nop_Stub_54584 hand provisional empty function

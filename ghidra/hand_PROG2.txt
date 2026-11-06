@@ -1,0 +1,258 @@
+0x0600e800 func prog2_EntryThunk hand provisional thunk to prog2_Entry
+0x0600e80c func prog2_Entry hand provisional sets stack, copies vector ptr, calls init, returns shifted status
+0x0600ed28 func regtable_WriteShortPairs_2 hand provisional offset/value short pair table writer (copy of PROG1 helper)
+0x0600ed68 func stub_WriteDtLoopOpcodes hand provisional writes opcodes 4f22 4210 7fff into low RAM stub
+0x0600ed94 func dma_RequestCopyWords_2 hand provisional starts DMA copy len/4 words
+0x0600edc4 func dma_WaitIdle_2 hand provisional spins until busy bit clears
+0x0600edd2 func dma_SaveReturnReg_2 hand provisional stores PR into DMA block
+0x0600f294 func input_EdgeTestMaskC0 hand provisional tests button bits 0xc0 of two words, writes result to out array
+0x0600f300 func input_EdgeTestMask30 hand provisional same as input_EdgeTestMaskC0 for bits 0x30
+0x0600f36c func frame_IdleHookIfEnabled hand provisional calls two no-op hooks if flag 0x80 clear
+0x0600f38c func nop_Stub hand provisional empty function
+0x0600f39e func bios_WaitLoopUntilFlag hand provisional loops with BIOS vbr+0xfc call until status flag set
+0x0600f464 func bios_WaitCountdown hand provisional busy wait via BIOS call for param iterations
+0x0600f4c8 func menu_CopyTableBuildItems hand provisional copies 8-byte entries into table and formats text items
+0x0600f54c func menu_SetEntryHalf hand provisional writes high/low halfword of param into selected entry
+0x0600f598 func menu_RunTimedCallback hand provisional runs callback loop with timer, default callback idle hook
+0x0600f608 func menu_RunTimedCallback_b hand provisional twin of menu_RunTimedCallback
+0x0600f68c func cd_LoadAndRunFile hand provisional sets flags, calls file read, starts next program, clears flags
+0x0600f720 func debug_DrawStatusLines hand provisional prints several counters with formatter
+0x0600f7fc func fmt_PrintHexPair hand provisional formats value into hex digits at dest
+0x0600f87a func fmt_FlushPair hand provisional calls formatter twice
+0x0600f8c4 func color_UnpackBytesFromTable hand provisional splits table word into four bytes
+0x0600f918 func text_BuildLineBuffer hand provisional builds string line via lookup table per slot
+0x0600f9a8 func pad_GetPortType hand provisional returns 2/3/4 from port flags
+0x0600f9dc func settings_UnpackFromSave hand provisional copies save-block fields into settings variables
+0x0600fa8c func settings_MapButtonIds hand provisional maps 8 button ids through table into config bytes
+0x0600faca func mem_Copy13Bytes hand provisional copies 13 bytes
+0x0600fb30 func settings_LoadAll hand provisional loads settings from save data into globals
+0x0600fd2c func pad_GetModeBits hand provisional returns 0-3 from pad mode flag bits
+0x0600fd6c func table_Lookup2D hand provisional byte lookup index+row*4
+0x0600fdd0 func menu_HandleCursorMove hand provisional cursor input handling, calls apply routine
+0x0600fef8 func fmt_PrintBcdValue hand provisional converts digits to ASCII
+0x0600ffc4 func menu_FormatSlotEntries hand provisional formats 8 entries of 12 byte text
+0x06010014 func menu_FormatEntryList5_a hand provisional formats 5 entries
+0x06010054 func menu_FormatEntryList5_b hand provisional formats 5 entries variant
+0x060100b0 func pad_ReadDirectionMasks hand provisional builds direction masks from button bits
+0x06010854 func fmt_PrintWithSavedPtr hand provisional calls formatter preserving pointer
+0x06010940 func menu_DrawStringA hand provisional draws menu string using format helper
+0x0601097c func menu_MainLoop hand provisional main menu loop with BIOS wait
+0x06010a24 func menu_DrawStringB hand provisional draws second menu string
+0x06010a9c func gfx_LoadMenuAssets hand provisional decompresses graphics into VDP1/VDP2 RAM
+0x06010b24 func buffer_ClearEveryOtherWord hand provisional zeroes 32 words stride 8
+0x06010b34 func menu_ScanEntryTable32 hand provisional loops 32 shorts, checks entries against pad bits
+0x06010bf8 func menu_DrawFrameBox hand provisional draws box from template values with saved ptr
+0x06010c4c func menu_CursorStepValue hand provisional steps cursor value by pad direction, returns 1/2
+0x06010c98 func menu_SetItemAttributes hand provisional sets attribute word on four items and highlights selected
+0x060112e8 func screenA_MainLoop hand provisional per-frame loop for screen A with BIOS wait
+0x060113b8 func screenA_LoadGraphics hand provisional decompresses graphics to VDP2 for screen A
+0x060113dc func screenA_Init hand provisional sets mode 8 and port type for screen A
+0x06011414 func screenA_DrawItems hand provisional draws item list with selection
+0x0601147c func screenA_HandleStart hand provisional start button handling, plays sfx 0x77
+0x060114ac func snd_PlaySfx_78 hand provisional calls sound handler with id 0x78 (cancel)
+0x060114ba func nop_Stub_114ba hand provisional empty function
+0x060114c2 func screenA_SelectSfx hand provisional plays sfx 0x74 for selection above 3
+0x060114f4 func screenA_Exit hand provisional plays 0x75, runs cd_LoadAndRunFile, applies settings
+0x06011510 func settings_WriteToSmpc hand provisional writes settings bit to flags, issues SMPC command, waits
+0x06011e78 func screenB_LoadGraphics hand provisional loads two graphics sets into VDP2 and resets state
+0x06011fda func screenB_LoadGraphicsShort hand provisional loads one graphics set and state reset
+0x060120de func screenC_LoadGraphics hand provisional loads two graphics sets and resets state
+0x060121f6 func screenC_LoadGraphicsShort hand provisional loads one graphics set and resets state
+0x060122c0 func screenD_Init hand provisional loads tables and graphics, debug lines, sets entry
+0x0601235a func screenD_DrawItems hand provisional draws entry list using formatter
+0x06012e82 func screenE_MainLoop hand provisional main loop for screen E
+0x06012ec0 func screenE_Init hand provisional loads tables and graphics for screen E
+0x06012efa func screenE_DrawItems hand provisional draws list for screen E
+0x06013708 func screenF_Init hand provisional loads tables and graphics selected by index
+0x06013758 func screenF_DrawItems hand provisional draws entries with index lookup
+0x06014222 func screenG_MainLoop hand provisional main loop screen G
+0x06014260 func screenG_Init hand provisional init screen G
+0x0601429a func screenG_DrawItems hand provisional draws 4 rows
+0x06014ce4 func cd_WrapperEf30 hand provisional returns result of FUN_0608ef30 [r2 rep STAGE3 0x0608eef2] [from GG1 STAGE3 0x0608eef2]
+0x06014cf2 func screenH_DrawSprite hand provisional writes sprite words, swaps halves by flag
+0x06014d5e func screenH_DrawLabel hand provisional prints number plus letter label
+0x06014daa func screenH_SelectAction hand provisional input action via sound handlers
+0x06014de2 func screenH_Exit hand provisional calls handlers, plays 0x75
+0x060150a0 func screenI_SelectNext hand provisional picks next item from table, plays 0x77
+0x06015156 func nop_Stub_15156 hand provisional empty function
+0x06015a94 func screenJ_Init hand provisional builds list for slot, loads text, formats entries
+0x06015b00 func screenJ_Draw hand provisional draws entries with menu_CopyTableBuildItems
+0x06015b7e func snd_PlaySfx_78_b hand provisional plays sfx 0x78
+0x06015b8e func nop_Stub_15b8e hand provisional empty function
+0x06015b96 func snd_PlaySfx_75 hand provisional plays sfx 0x75 (confirm)
+0x060164b4 func screenK_Init hand provisional builds 5-entry list for slot
+0x060164f4 func screenK_Draw hand provisional draws entries
+0x06016554 func snd_PlaySfx_78_c hand provisional plays sfx 0x78
+0x06016564 func nop_Stub_16564 hand provisional empty function
+0x0601656c func snd_PlaySfx_75_b hand provisional plays sfx 0x75
+0x06016cb8 func screenL_Init hand provisional builds 5-entry list via table lookup
+0x06016d7a func screenL_Draw hand provisional draws entries
+0x06016df4 func snd_PlaySfx_78_d hand provisional plays sfx 0x78
+0x06016e04 func nop_Stub_16e04 hand provisional empty function
+0x06016e0c func snd_PlaySfx_75_c hand provisional plays sfx 0x75
+0x060177bc func screenM_GetMaxIndex hand provisional computes selectable max index from counters
+0x06017810 func snd_PlaySfx_75_d hand provisional plays sfx 0x75
+0x0601807c func screenM_FillCursorColors hand provisional writes palette words for cursor
+0x06018150 func screenM_UpdateCursor hand provisional plays 0x78, updates cursor entries
+0x060181ac func nop_Stub_181ac hand provisional empty function
+0x060181b4 func snd_PlaySfx_75_e hand provisional plays 0x75, writes CRAM word
+0x060182a8 func screenN_MainLoop hand provisional main loop screen N
+0x060182fa func screenN_Init hand provisional loads slot data, compares counters
+0x0601844c func screenN_Draw hand provisional draws 11 rows
+0x0601851a func screenN_SelectSfx hand provisional plays 0x7b unless state 3
+0x06018532 func screenN_HandleDirection hand provisional plays 0x78/0x79 by direction and state
+0x060185c4 func screenN_Cancel hand provisional plays 0x74 and handler, BIOS call 2
+0x060185e2 func screenN_StateAdvance hand provisional maps state 0/3/4 to new state
+0x0601863a func screenN_CopyNameChars hand provisional maps characters through table into buffer
+0x06019066 func screenO_UpdateStats hand provisional compares slot values to limit, updates flags
+0x06019186 func screenO_Draw hand provisional draws 8 rows
+0x0601922c func screenO_SelectSfx hand provisional plays 0x7b unless state 3
+0x06019244 func screenO_HandleDirection hand provisional plays 0x78/0x79 by state
+0x060192e8 func screenO_Cancel hand provisional plays 0x74, handler, BIOS call 2
+0x06019306 func screenO_StateAdvance hand provisional maps state to new state
+0x0601935e func screenO_CopyNameChars hand provisional maps characters through table
+0x06019b92 func screenP_UpdateStats hand provisional compares slot values with limits
+0x06019d18 func screenP_Draw hand provisional draws 8 rows
+0x06019dd6 func screenP_SelectSfx hand provisional plays 0x7b unless state 3
+0x06019dee func screenP_HandleDirection hand provisional plays 0x78/0x79
+0x06019eaa func screenP_Cancel hand provisional plays 0x74 and handler
+0x06019ee8 func screenP_StateAdvance hand provisional maps state to new state
+0x06019f40 func screenP_CopyNameChars hand provisional maps characters through table
+0x0601a7dc func screenQ_MainLoop hand provisional main loop screen Q
+0x0601a852 func screenQ_Init hand provisional sets vector, reads flags, init rows
+0x0601a8cc func screenQ_DrawRow hand provisional calls menu_SetEntryHalf for current row
+0x0601a8ee func screenQ_PlayConfirm hand provisional plays 0x77 then registers callback
+0x0601a8fc func screenQ_RegisterCallback hand provisional registers handler with row text
+0x0601a918 func screenQ_OnSelect hand provisional runs selection, plays 0x74, enters submenu
+0x0601a96e func screenQ_OnCancel hand provisional plays 0x74, timed callback, resets flags
+0x0601a9bc func screenQ_MarkSlotComplete hand provisional ORs bit mask into slot table, flags when full
+0x0601ad54 func screenR_MainLoop hand provisional main loop reads pad then draw
+0x0601add8 func screenR_Init hand provisional sets mode 7, BIOS call
+0x0601ae34 func screenR_DrawList hand provisional draws 4 rows via table
+0x0601aec6 func screenR_PlayCancel hand provisional plays 0x78, handler, draws
+0x0601aee8 func screenR_PlayConfirm hand provisional plays 0x77, selects entry
+0x0601aef6 func screenR_SelectEntry hand provisional selects table entry by cursor
+0x0601af54 func screenR_ApplyChoice hand provisional applies chosen entry via helper
+0x0601b07e func screenR_PlayAccept hand provisional plays 0x75, handler call
+0x0601b584 func screenS_MainLoop hand provisional main loop screen S
+0x0601b5ea func screenS_Init hand provisional init screen S, text call
+0x0601b60c func screenS_CallHook hand provisional calls hook pointer
+0x0601b62e func screenS_PlaySfx78Draw hand provisional plays 0x78 then writes color word
+0x0601b63c func screenS_WriteColorWord hand provisional writes CRAM word swapping halves by flag
+0x0601b656 func nop_Stub_1b656 hand provisional empty function
+0x0601b662 func sys_BiosCall2_1b662 hand provisional vector call 2 wrapper
+0x0601b738 func screenS_Exit hand provisional clears state, sets flag, BIOS call 2
+0x0601b7a4 func screenS_DrawRows hand provisional draws rows from tables
+0x0601b836 func screenS_Cancel hand provisional plays 0x78, BIOS call, redraw
+0x0601b858 func screenS_Confirm hand provisional plays 0x77, selects slot entry
+0x0601b866 func screenS_UpdateSlot hand provisional updates slot entry pointers
+0x0601b8b6 func screenS_ScrollEntries hand provisional scrolls entries by cursor
+0x0601b95c func screenS_PlayAccept hand provisional plays 0x75, text call
+0x0601c2c4 func screenT_MainLoop hand provisional main loop screen T
+0x0601c332 func screenT_Init hand provisional loads gfx via gfx_DecompressToVram
+0x0601c366 func screenT_Draw hand provisional draws rows
+0x0601c3ec func screenT_SelectSfx hand provisional plays 0x6e and text
+0x0601c462 func screenT_Confirm hand provisional plays 0x70/0x6f by flag
+0x0601c498 func screenT_FindFirstFreeBit hand provisional scans bitmask for first free bit
+0x0601ceb8 func screenU_MainLoop hand provisional main loop screen U
+0x0601cf26 func screenU_Init hand provisional loads gfx
+0x0601cf56 func screenU_Draw hand provisional draws rows
+0x0601cfdc func screenU_SelectSfx hand provisional plays 0x6e and text
+0x0601d04e func screenU_Confirm hand provisional plays 0x6f, BIOS call
+0x0601d4d8 func screenU_SetModeC hand provisional sets mode table index plus 0xc
+0x0601d4ea func screenU_SetMode8 hand provisional sets mode table index plus 8
+0x0601d542 func screenU_ScanTableEnd hand provisional scans pairs until zero
+0x0601d5b8 func screenV_Init hand provisional loads gfx
+0x0601d5ec func screenV_Draw hand provisional draws rows
+0x0601d672 func screenV_SelectSfx hand provisional plays 0x6e and text
+0x0601d6e4 func screenV_Confirm hand provisional plays 0x6f, calls handler
+0x0601d71e func screenV_LoadPointerTables hand provisional fills pointer tables by index
+0x0601defc func screenW_MainLoop hand provisional main loop screen W
+0x0601df56 func screenW_Init hand provisional loads gfx by table index
+0x0601dfe2 func screenW_Update hand provisional scroll update from pad
+0x0601e0d8 func screenW_HandleInput hand provisional handles pad bits and scroll limits
+0x0601e148 func screenW_Cancel hand provisional plays 0x70/0x71 and BIOS call
+0x06020480 func screenX_MainLoop hand provisional main loop screen X
+0x060204ec func screenX_Init hand provisional loads two gfx sets
+0x06020524 func screenX_Draw hand provisional draws via text printer
+0x060205ba func screenX_SelectSfx hand provisional plays 0x6e, loads palette
+0x060205c6 func screenX_LoadPalette hand provisional text call and decompress palette
+0x06020604 func screenX_Cancel hand provisional plays 0x70/0x71
+0x06021150 func screenY_MainLoop hand provisional main loop screen Y
+0x060211dc func screenY_Init hand provisional loads gfx, resets counter
+0x06021230 func screenY_Draw hand provisional draws with VDP words
+0x060212da func screenY_SelectSfx hand provisional plays 0x6e then help text
+0x060212ea func screenY_PlaySfx59 hand provisional plays 0x59 and text
+0x060212f6 func screenY_ShowHelp hand provisional shows help text from table
+0x0602131e func screenY_DrawGridThunk hand provisional thunk to screenY_DrawGrid
+0x06021322 func screenY_Cancel hand provisional plays 0x70/0x71, BIOS call 2
+0x0602134c func screenY_DrawGrid hand provisional draws 4-iteration grid
+0x06021c4e func screenZ_Init hand provisional loads gfx
+0x06021cac func screenZ_Draw hand provisional prints list
+0x06021cbe func screenZ_Toggle hand provisional toggles flag, updates pointer
+0x06021d4e func screenZ_HandleSfx hand provisional plays 0x78 then toggles
+0x06021d62 func nop_Stub_21d62 hand provisional empty function
+0x06021d6a func screenZ_Confirm hand provisional plays 0x70/0x71, stores result bytes
+0x06021de6 func screenZ_PrintList hand provisional prints strings from pointer list
+0x06022d6c func optMenu_TickCounter hand provisional decrements counter when mode 7
+0x06022d8c func optMenu_SelectTable1 hand provisional selects table 1, loads pointers
+0x06022d98 func optMenu_SelectTable2 hand provisional selects table 2, loads pointers
+0x06022da4 func optMenu_SelectTable3 hand provisional selects table 3, loads pointers
+0x06022db0 func optMenu_LoadTablePointers hand provisional copies 4 table pointers by offset
+0x06022e4c func optMenu_Init hand provisional loads gfx
+0x06022e88 func optMenu_Draw hand provisional draws via helper
+0x06022eaa func optMenu_SelectSfx hand provisional plays 0x6e and text
+0x06022ebc func optMenu_SelectText hand provisional text call
+0x06022edc func optMenu_Confirm hand provisional plays 0x6f and calls handler from table
+0x06022f1a func optMenu_Cancel hand provisional clears flag, BIOS call 2
+0x06023a58 func text_PrintTwoBlocks hand provisional reads time/date, prints two blocks
+0x06023a88 func text_SwapBufAndDraw hand provisional swaps buffer pointers and draws
+0x06023bc8 func gfx_DecompressToVram hand provisional run-length style decompress src to dst
+0x06024cc2 func font_DrawGlyph hand provisional draws glyph into VDP2 cell
+0x06024d4a func font_SelectBank hand provisional picks font bank by code range
+0x06024db8 func font_AdvanceCursor hand provisional updates cursor position state
+0x06024df2 func font_DrawChar hand provisional draws one char with attributes
+0x06024e20 func font_SkipChars hand provisional skips count chars in string
+0x06024e32 func font_AdvanceX hand provisional adds step to cursor x
+0x06024e44 func font_NewLine hand provisional resets x, advances y with wrap
+0x06024e6a func font_PrintString hand provisional prints null-terminated string
+0x06024eca func font_DrawGlyphByIndex hand provisional draws glyph by table index
+0x0604a08c func sys_DecodeFlagsField hand provisional masks and decodes field
+0x0604a8fc func sys_CallWithIrqMask hand provisional enter critical, call, leave
+0x0604a970 func sys_EnterCritical hand provisional masks interrupts with nesting count
+0x0604a9c4 func sys_LeaveCritical hand provisional restores interrupt mask when count zero
+0x0604aa10 func sys_HookVectors hand provisional saves and replaces two vectors
+0x0604aa4c func sys_UnhookVectors hand provisional restores saved vectors
+0x0604aa84 func sys_CheckStatusOk hand provisional calls fn 0x0c, returns status != 1
+0x0604aac4 func sys_Wrap_Off04 hand provisional critical-wrapped call of table offset 4
+0x0604ab38 func sys_Wrap_Off08 hand provisional critical-wrapped call of table offset 8
+0x0604ab88 func sys_Wrap_Off0c hand provisional critical-wrapped call of table offset 0xc
+0x0604abe4 func sys_Wrap_Off10 hand provisional critical-wrapped call of table offset 0x10
+0x0604ac60 func sys_Wrap_Off14 hand provisional critical-wrapped call of table offset 0x14
+0x0604acbc func sys_Wrap_Off18 hand provisional critical-wrapped call of table offset 0x18
+0x0604ad14 func sys_Wrap_Off1c hand provisional critical-wrapped call of table offset 0x1c
+0x0604ad90 func sys_Wrap_Off20 hand provisional critical-wrapped call of table offset 0x20
+0x0604adec func sys_Wrap_Off24 hand provisional call of table offset 0x24 with result fixup
+0x0604ae60 func sys_Wrap_Off28 hand provisional call of table offset 0x28
+0x0604ae94 func sh2_GetSrIMask hand provisional returns SR interrupt mask bits
+0x0604aecc func sh2_SetSrIMask hand provisional sets SR interrupt mask
+0x0604af18 func nop_Stub_4af18 hand provisional empty function
+0x0604af28 func sh2_GetSr hand provisional returns SR
+0x0604af44 func smpc_PeripheralParse hand provisional large peripheral data parser
+0x0604b2ec func smpc_PeripheralPoll hand provisional polls SMPC status and reads peripheral data
+0x0604bf8c func smpc_CheckLineLimit hand provisional sets state 1 when line count reached
+0x0604bfb8 func timer_CheckFlagBit hand provisional [from GG1 STAGE1 0x06089534, sim 0.92]
+0x0604bff4 func smpc_CopyBytesToBuffer hand provisional copies bytes up to limit
+0x0604c06c func smpc_CopyColumns hand provisional copies column bytes to line buffer
+0x0604c0f0 func smpc_InitState hand provisional initializes parser state vars
+0x0604c1b0 func smpc_WaitSf hand provisional waits SF flag, returns done
+0x0604c23c func smpc_FillBlankLines hand provisional fills lines with blank values
+0x0604c2bc func console_PutChar hand writes character cell at cursor row column [from GG1 STAGE1 0x06089742]
+0x0604c2f8 func console_PutAttr hand writes attribute byte at cursor cell +1 [from GG1 STAGE1 0x06089760]
+0x0604c338 func smpc_SnapshotState hand provisional copies state vars to local block
+0x0604c3b4 func smpc_ProcessBlock hand provisional large block processing
+0x0604c7a0 func sh2_GetSrIMask_b hand provisional returns SR interrupt mask bits
+0x0604c7d8 func sh2_SetSrIMask_b hand provisional sets SR interrupt mask
+0x0604c824 func nop_Stub_4c824 hand provisional empty function
+0x0604c834 func sh2_GetSr_b hand provisional returns SR
+0x0604c850 func math_DivStepUnsigned hand provisional [from GG1 STAGE1 0x060434f4, sim 0.98]

@@ -1,0 +1,640 @@
+0x0600e800 func robsys_Entry hand provisional sets reg, calls init
+0x0600ec0c func game_FrameUpdateMain hand provisional large per-frame update
+0x0600f98a func game_FrameUpdateB hand provisional per-frame update part B
+0x06010238 func sys_CriticalCallA hand provisional masks irq, calls bios vector 3
+0x06010320 func sys_CriticalCallB hand provisional masks irq, calls bios vector 3
+0x060103a8 func int_SetVblankInHandler hand provisional [from GG1 STAGE1 0x0600f496, sim 1.00]
+0x060103d8 func game_InstallCallbacks hand provisional installs callbacks
+0x06010442 func pad_ReadBitsA hand provisional reads bits from pad word
+0x06010508 func pad_ReadBitsB hand provisional reads bits from pad word
+0x060105b4 func game_ResetGlobals hand provisional resets global state vars
+0x060107c0 func pad_GetBitByPlayer hand provisional pad flag lookup by player
+0x060107ea func pad_GetByteByPlayer hand provisional pad byte by player index
+0x060107fe func pad_TestBit2 hand provisional tests bit 2 of pad flags
+0x06010858 func pad_PlayerActive hand provisional checks player active
+0x06010894 func pad_ReadByte36 hand provisional reads pad byte
+0x0601089c func pad_ReadByte35 hand provisional reads pad byte
+0x060108a4 func pad_TestBit4 hand provisional tests bit 4 of pad flags
+0x060108c0 func pad_SetBit10 hand provisional sets bit 0x10 of pad flags
+0x060108ca func pad_UpdateAll hand provisional updates pad state for all
+0x06010a54 func pad_GetByte2e hand provisional pad byte by player index
+0x06010a68 func game_GetModeBelow8 hand provisional mode check below 8
+0x06010a92 func pad_ReadByte37 hand provisional reads pad byte
+0x06010ad8 func rand_HashA hand provisional hash from param
+0x06010b0a func rand_HashB hand provisional hash of seed
+0x06010b34 func rand_HashC hand provisional hash of table entry for current player
+0x06010b64 func rand_ResetTable hand provisional resets random table
+0x06010b84 func game_ResetPlayerTables hand provisional resets player tables
+0x06010bce func game_AddToCounter hand provisional adds to global counter
+0x06010c20 func snd_PlayChecked hand provisional [from GG1 STAGE1 0x0600f6f8, sim 1.00]
+0x06010c5e func snd_PlayChecked_10c5e hand provisional [from GG1 STAGE1 0x0600f6f8, sim 1.00]
+0x06010c9c func game_CallAndSetFlag hand calls a function then sets a flag to one [from GG1 STAGE1 0x0600f774]
+0x06010cb0 func game_GetStageMode hand provisional returns stage mode, 2 special
+0x06010cd8 func game_CheckFlagJump hand provisional [from GG1 STAGE1 0x0600f788, sim 1.00]
+0x06010cee func game_CheckFlagJump_10cee hand provisional [from GG1 STAGE1 0x0600f788, sim 1.00]
+0x06010d04 func game_JumpByStageMode hand provisional jump on stage mode
+0x06010d28 func sys_JumpTableA hand provisional indirect jump stub
+0x06010d30 func sys_JumpTableB hand provisional indirect jump stub
+0x06010d38 func sys_JumpTableC hand provisional indirect jump stub
+0x06010d40 func sys_JumpTableD hand provisional indirect jump stub
+0x06010d7c func game_StageMain hand provisional [from GG1 STAGE1 0x0600f7d0, sim 0.96]
+0x060135b0 func mem_CopyWords16 hand provisional [from GG1 STAGE1 0x0601540e, sim 1.00]
+0x060135ce func mem_CopyWords16_135ce hand provisional [from GG1 STAGE1 0x0601540e, sim 0.95]
+0x060135e8 func vdp2_BuildMapPage hand provisional fills 64x64 halfword grid from source table with wrap mask and offset [from GG1 STAGE1 0x0601542a]
+0x060136ac func vdp2_ClearMapBuf hand provisional [from GG1 STAGE1 0x060154ee, sim 0.95]
+0x060136dc func vdp2_FillMapBuf hand fills 64x64 word buffer with zero or four by flag [from GG1 STAGE1 0x06015524]
+0x06013724 func mem_ClearBufA hand zeroes a 0x40 byte buffer [from GG1 STAGE1 0x0601556c]
+0x06013740 func mem_ClearBufB hand zeroes a buffer of fixed size [from GG1 STAGE1 0x06015588]
+0x0601375c func vdp_UpdateRegsFrame hand provisional updates VDP2 registers per frame
+0x06013a62 func hw_WaitFlag hand spin waits on a status bit mask 2 [from GG1 STAGE1 0x06015874]
+0x06013a72 func area_ClassifyPoint hand provisional returns which of three rectangles contains point else 3 [fuzzy 0.99 STAGE1 0x06015948] [from GG1 STAGE8 0x06015d60]
+0x06013b40 func vdp_SetupFrameA hand provisional sets frame state and VDP regs
+0x06013c98 func game_GetFlagByte hand provisional returns flag byte state
+0x06013cc4 func game_StartStage hand provisional starts stage, calls setup fns
+0x06013e60 func game_CheckStageMode hand provisional checks stage mode then calls fn
+0x06013e98 func sys_SetVdp1Param hand provisional calls bios fn with param
+0x06013ed8 func sys_CheckBiosResult hand provisional checks bios result 6
+0x06013ef4 func game_CallWithStagePlus1 hand provisional calls fn with stage+1
+0x06013f00 func game_ScanTable hand provisional scans table
+0x06013fa6 func game_ClearShortTable hand provisional clears short table
+0x06013fe0 func game_SendCommandIfIdle hand provisional sends command 0xd if idle
+0x0601405c func sys_WaitReg hand provisional waits for register bits, loops 11
+0x06014082 func game_InitPlayerFlags hand provisional inits player flags
+0x060140e8 func game_GetStageFlagByte hand provisional stage flag byte lookup
+0x060141c0 func game_StageSetup hand provisional large stage setup
+0x06014f2c func obj_CopyEntry hand provisional copies entry between tables
+0x0601525e func vdp2_CalcRotationLine hand provisional computes per column values from sin cos for rotation ground [from GG1 STAGE1 0x06015fea]
+0x06015428 func vdp_UploadBlockWrap hand provisional uploads block via helper
+0x0601551c func game_InitBuffers hand provisional initializes buffers
+0x060156f4 func game_InitTimers hand provisional initializes timers
+0x060159e4 func game_PlayerInit hand provisional large player init
+0x06016286 func game_PlayerCheckState hand provisional player state check
+0x06016544 func game_PlayerStepA hand provisional player step A
+0x060166fc func game_ModeCheckA hand provisional stage mode checks A
+0x060169ee func game_ModeCheckB hand provisional stage mode checks B
+0x06016c48 func game_ModeCheckC hand provisional stage mode checks C
+0x06016e46 func game_ResetPlayerSlot hand provisional resets player slot
+0x06016f00 func game_ClampStatA hand provisional clamps player stat A
+0x06016f3a func game_ClampStatB hand provisional clamps player stat B
+0x06016f94 func game_ClampStatC hand provisional clamps player stat C
+0x06016fce func game_PlayerWeaponUpdate hand provisional large player/weapon update
+0x0601771a func game_PlayerCheckHit hand provisional player hit check
+0x0601791a func game_CheckPlayerActive hand provisional checks player active then branch
+0x06017964 func robot_UpdateA hand provisional large robot update A
+0x0601a220 func robot_PostUpdateA hand provisional post update A
+0x0601aaec func robot_UpdateB hand provisional large robot update B
+0x0601bb52 func robot_PostUpdateB hand provisional post update B
+0x0601c5f8 func robot_UpdateC hand provisional large robot update C
+0x0601d5d0 func robot_PostUpdateC hand provisional post update C
+0x0601de14 func robot_UpdateD hand provisional large robot update D
+0x0601fa50 func robot_PostUpdateD hand provisional post update D
+0x06020610 func robot_SetupDraw hand provisional robot draw setup
+0x0602092c func robot_StoreSlotPtr hand provisional stores slot pointer
+0x06020998 func robot_SelectTargets hand provisional selects target info
+0x06020a4c func robot_FindTarget hand provisional finds target slot
+0x06020aec func robot_ProcessSlots hand provisional large slot processing
+0x060211bc func mem_ClearStrided hand provisional [from GG1 STAGE1 0x06016270, sim 0.92]
+0x060211e0 func mem_ClearStrided_2 hand clears second strided array [from GG1 STAGE1 0x06016290]
+0x060211fe func robot_ClearSlot hand provisional clears slot
+0x0602122a func mem_ClearBytes64 hand provisional [from GG1 STAGE1 0x0601b302, sim 0.94]
+0x0602125c func robot_SetupAttack hand provisional sets up attack data
+0x06021404 func obj_ResetFlags hand provisional [from GG1 STAGE2 0x060164f4, sim 0.93]
+0x0602142e func obj_ResetFlags_2 hand provisional [from GG1 STAGE1 0x060164bc, sim 0.93]
+0x06021454 func hit_TestBoxA hand provisional tests hit box A
+0x06021664 func game_ProcessCollisions hand provisional processes collisions
+0x06021c2c func hit_TestShapeA hand provisional shape hit test A
+0x06022260 func hit_TestShapeB hand provisional shape hit test B
+0x060225e2 func hit_TestShapeC hand provisional shape hit test C
+0x06022960 func hit_TestBoxB hand provisional tests hit box B
+0x06022b70 func hit_TestShapeD hand provisional shape hit test D
+0x06022f04 func hit_TestBoxC hand provisional tests hit box C
+0x060230cc func hit_TestBoxD hand provisional tests hit box D
+0x06023294 func hit_TestBoxE hand provisional tests hit box E
+0x06023480 func hit_TestBoxF hand provisional tests hit box F
+0x0602366c func sort_QuickDist hand provisional [from GG1 STAGE1 0x06017adc, sim 0.98]
+0x060236fc func sort_QuickDist_236fc hand provisional [from GG1 STAGE1 0x06017adc, sim 0.99]
+0x0602378c func model_OffsetVertices hand provisional [from GG1 STAGE1 0x06017b6c, sim 0.93]
+0x0602383c func list_ProcessEntries hand provisional processes entry list
+0x060238c8 func hit_ResolveA hand provisional resolves hit A
+0x06023cca func hit_ResolveB hand provisional resolves hit B
+0x0602417c func hit_ApplyDamage hand provisional applies damage
+0x060244be func vdp1_EmitPolygon hand emits a VDP1 polygon command [from GG1 STAGE1 0x0601871e]
+0x060245a2 func model_PushList hand provisional [from GG1 STAGE1 0x0601a6e8, sim 1.00]
+0x06024640 func obj_UpdateSlotA hand provisional updates slot A
+0x060246d0 func model_PushListRev hand provisional [from GG1 STAGE1 0x0601a81c, sim 1.00]
+0x0602474c func obj_UpdateSlotB hand provisional updates slot B
+0x06024804 func dma_CopyModel hand provisional [from GG1 STAGE1 0x0601a934, sim 0.91]
+0x06024826 func obj_ClearFlags hand provisional [from GG1 STAGE1 0x0601a97c, sim 1.00]
+0x06024856 func game_SetFlagsFromTable hand provisional sets flags
+0x06024a30 func obj_ClampValue hand provisional clamps value to limit
+0x06024a90 func game_CallFnPtr hand provisional calls function pointer
+0x06024adc func bullet_ClearTable hand provisional [from GG1 STAGE1 0x0601ab4c, sim 0.94]
+0x06024afc func math_AddWrapped hand provisional adds with table wrap
+0x06024b86 func game_CallCallbackPtr hand provisional calls callback
+0x06024c48 func game_CheckRangeAndCall hand provisional range check
+0x06024c9c func game_UpdateTable hand provisional updates table
+0x06024e48 func terrain_IsBlocked hand provisional [from GG1 STAGE1 0x0601ad88, sim 0.98]
+0x06024ee4 func game_ClearTableBytes hand provisional clears table bytes
+0x06024fa2 func game_TargetQuery hand provisional target query
+0x06025164 func robot_QuerySlotField hand provisional queries robot slot field
+0x060251e0 func game_InitSlotTables hand provisional inits slot tables
+0x0602553c func game_ProcessPlayerInputs hand provisional processes player inputs
+0x06025a56 func mem_ClearBytes64_25a56 hand provisional [from GG1 STAGE1 0x0601b302, sim 0.94]
+0x06025a76 func timer_SetSlot hand sets one byte timer slot to 0x28 [from GG1 STAGE1 0x0601b31e]
+0x06025a80 func timer_TickAll hand provisional [from GG1 STAGE1 0x0601b328, sim 1.00]
+0x06025ae4 func game_GetActivePlayerPtr hand provisional returns pointer by active player
+0x06025bd0 func game_ComputeOffset hand provisional computes offset triple
+0x06025d24 func math_AngleToTarget hand provisional [from GG1 STAGE2 0x0601b578, sim 0.99]
+0x06025e78 func math_Rotate2D hand rotates x y by angle using 16.16 sin cos tables [from GG1 STAGE1 0x0601b670]
+0x06025ede func game_UpdateTimerEntry hand provisional updates timer entry
+0x06026078 func robot_SetStateFlag hand provisional sets robot state flag
+0x060261de func game_ClearIfActive hand provisional clears flag if active player
+0x0602620e func game_ResetStageVars hand provisional resets stage vars
+0x0602645e func game_StepStageTimers hand provisional steps stage timers
+0x06026632 func game_ClampWithMode hand provisional clamps value by mode
+0x060266f0 func game_CallTargetQuery hand provisional calls target query
+0x060267bc func list_RelocateHead hand provisional relocates list head pointer
+0x060267f6 func game_FindFreeSlot hand provisional finds free slot from index 2
+0x0602682e func game_SwapShorts hand provisional swaps short pair
+0x060268c0 func game_InitTable hand provisional initializes table
+0x0602691a func list_RelocateWalk hand provisional relocates list 0x17 entries
+0x06026934 func game_SetSlotPair hand provisional sets slot pair
+0x06026aa2 func game_ClearPlayerVars hand provisional clears player vars
+0x06026ac2 func game_CheckSlotActive hand provisional checks slot active
+0x06026b68 func game_CheckStateByte hand provisional checks state byte 0..2
+0x06026ba8 func hit_ClearEntries hand provisional [from GG1 STAGE1 0x0601b794, sim 0.93]
+0x06026bc8 func robot_SetupEntry hand provisional sets up robot entry
+0x06026d2c func game_InitStageTables hand provisional initializes stage tables
+0x0602702e func math_MinClamp hand provisional clamps by min of two
+0x0602708e func math_MinClamp2 hand provisional clamps by min of two
+0x060270ec func bullet_ClearPoolA hand provisional clears pool A
+0x06027122 func bullet_ClearPoolB hand provisional clears pool B
+0x0602715c func bullet_ClearPoolC hand provisional clears pool C
+0x06027180 func bullet_ResetCounter hand provisional resets counter
+0x060271d4 func bullet_SpawnA hand provisional spawns object A
+0x06027668 func bullet_SpawnB hand provisional spawns object B
+0x06027a3c func bullet_SpawnC hand provisional spawns object C
+0x06027cda func bullet_SpawnD hand provisional spawns object D
+0x06027e7e func bullet_SpawnE hand provisional spawns object E
+0x06027fd2 func bullet_UpdateA hand provisional large update A
+0x06028e1e func bullet_ClearPoolD hand provisional clears 0x50 entries
+0x06028e90 func bullet_UpdateB hand provisional update B
+0x06029486 func bullet_ApplyHash hand provisional hash for entry
+0x060294fa func bullet_UpdateAll hand provisional large update
+0x06029f62 func bullet_ApplyEffect hand provisional applies effect
+0x0602a11a func game_SetFlagPair hand provisional sets flag pair
+0x0602a1e4 func game_SetFlagPairB hand provisional sets flag pair
+0x0602a2c8 func effect_UpdateA hand provisional large effect update A
+0x0602aae0 func effect_UpdateB hand provisional large effect update B
+0x0602b27c func game_ScanList hand provisional scans list
+0x0602b37e func mem_ClearBytes64_2b37e hand provisional [from GG1 STAGE1 0x0601b302, sim 0.97]
+0x0602b39a func bullet_FindFreeSlot hand provisional [from GG1 STAGE1 0x0601c5c8, sim 0.95]
+0x0602b3d0 func game_CheckList hand provisional checks list
+0x0602b466 func game_ClearList hand provisional clears list
+0x0602b4e4 func game_CallWrap hand provisional wrapper
+0x0602b52e func robot_ApplyHit hand provisional applies hit to robot
+0x0602b6b0 func sort_QuickDist_2b6b0 hand provisional [from GG1 STAGE1 0x06017adc, sim 0.98]
+0x0602b740 func game_CheckStageThree hand provisional checks stage 3
+0x0602b790 func ai_PickTargetA hand provisional picks target A
+0x0602ba4c func ai_PickTargetB hand provisional picks target B
+0x0602bd8e func ai_CheckLimit hand provisional checks limit
+0x0602bdfc func ai_PickTargetC hand provisional picks target C
+0x0602bfec func ai_PickTargetD hand provisional picks target D
+0x0602c178 func ai_Notify hand provisional notifies player
+0x0602c268 func ai_PickTargetE hand provisional picks target E
+0x0602c3cc func ai_UpdateAll hand provisional large AI update
+0x0602ce8e func ai_ClearEntries hand provisional clears 0x18 entries
+0x0602cee2 func ai_UpdateEntry hand provisional updates entry
+0x0602d492 func ai_ApplyHash hand provisional hash for entry
+0x0602d506 func ai_SetFlagPair hand provisional sets flag pair
+0x0602d5cc func effect_FreeGroup hand provisional [from GG1 STAGE1 0x060203d8, sim 0.96]
+0x0602de96 func fx_SpawnType17 hand provisional allocates effect slot via allocator callee, sets type 0x17 and position args [from GG1 STAGE1 0x06020ca2]
+0x0602def0 func fx_SpawnType18 hand provisional allocates effect slot via allocator callee, sets type 0x18 and position args [from GG1 STAGE1 0x06020cfc]
+0x0602df4a func fx_SpawnType19 hand provisional allocates effect slot via allocator callee, sets type 0x19 and position args [from GG1 STAGE1 0x06020d56]
+0x0602dfc4 func ai_BehaviorLarge hand provisional large behavior
+0x0602eafe func snd_Play8 hand provisional sound call wrapper A
+0x0602eb74 func snd_Play9 hand provisional sound call wrapper B
+0x0602ebec func snd_Play11 hand provisional sound call wrapper C
+0x0602ec6c func snd_PlayCheckedA hand provisional sound call checked A
+0x0602ecce func snd_PlayCheckedB hand provisional sound call checked B
+0x0602ed32 func snd_VoiceInitA hand provisional inits voice A
+0x0602ed78 func snd_VoiceInitB hand provisional inits voice B
+0x0602edd0 func snd_PlayAtPos hand provisional plays at position
+0x0602eeae func snd_VoiceQueryA hand provisional queries voice A
+0x0602ef40 func snd_PlayCheckedC hand provisional sound call checked C
+0x0602efa4 func snd_VoiceStop hand provisional stops voice
+0x0602effc func snd_PlayCheckedD hand provisional sound call checked D
+0x0602f05c func snd_VoiceQueryB hand provisional queries voice B
+0x0602f112 func snd_PlayFixed hand provisional plays fixed
+0x0602f18a func snd_VoiceQueryC hand provisional queries voice C
+0x0602f272 func snd_PlayRandom hand provisional plays random
+0x0602f354 func snd_VoiceSetup hand provisional voice setup
+0x0602f470 func snd_Mixer hand provisional large mixer
+0x0602f8b0 func anim_CopyJoints hand provisional [from GG1 STAGE1 0x06019bb2, sim 0.92]
+0x0602fb44 func snd_UpdateEntry hand provisional updates entry
+0x0602fc00 func snd_UpdateChannels hand provisional updates channels
+0x0602fdb0 func fx_ClearTableB hand provisional [from GG1 STAGE1 0x0601bb66, sim 0.90]
+0x0602fdd2 func snd_ServiceQueueA hand provisional services queue A
+0x0602ff48 func snd_ServiceQueueB hand provisional services queue B
+0x0602ffe8 func snd_ServiceQueueC hand provisional services queue C
+0x060303e0 func snd_ServiceQueueD hand provisional services queue D
+0x06030538 func snd_ServiceQueueE hand provisional services queue E
+0x0603096c func game_StepPlayerA hand provisional player step A
+0x06030b3c func game_ComputeDistance hand provisional computes distance
+0x06030e48 func game_StepPlayerB hand provisional player step B
+0x06030fe8 func hud_BuildDigitSprites hand provisional converts value to digit sprite entries (sign, 1-3 digits), returns pointer [from GG1 STAGE1 0x06022416]
+0x060311d8 func hud_DrawTimerDigits hand provisional [from GG1 STAGE1 0x0602260a, sim 0.98]
+0x060312c8 func game_StepPlayerC hand provisional player step C
+0x06031478 func hud_DrawRadarBlips hand provisional loops over target table, draws a sprite entry per active blip position [from GG1 STAGE1 0x060228c4]
+0x060317ce func hud_DrawLeftPanel hand provisional sprite cmd for panel at fixed coordinates plus indicator blocks, flags checked [from GG1 STAGE1 0x06022c1a]
+0x06031a02 func game_StepPlayerD hand provisional large player step D
+0x06031f24 func game_StepPlayerE hand provisional player step E
+0x06032060 func game_StepPlayerF hand provisional player step F
+0x0603219c func hud_DrawSpriteListB hand provisional [from GG1 STAGE1 0x06023de8, sim 0.91]
+0x060322c0 func game_StepPlayerG hand provisional player step G
+0x0603249c func game_StepPlayerH hand provisional player step H
+0x0603262a func game_StepPlayerI hand provisional player step I
+0x06032a54 func game_StepPlayerJ hand provisional player step J
+0x06032d2e func game_StepPlayerK hand provisional player step K
+0x06032df2 func game_StepPlayerL hand provisional large player step L
+0x060336de func game_StepPlayerM hand provisional player step M
+0x060337ba func game_ReturnPtrA hand provisional returns pointer A
+0x06033872 func game_StepPlayerN hand provisional player step N
+0x06033998 func game_StepPlayerO hand provisional player step O
+0x06033a20 func game_ComputeLeadAngle hand provisional computes lead angle from stat table
+0x06033b7a func game_CheckLocalPlayer hand provisional checks local player slot
+0x06033bcc func game_StepPlayerP hand provisional player step P
+0x06033c94 func game_StepPlayerQ hand provisional player step Q
+0x06033e1c func snd_QueueRequest hand provisional [from GG1 STAGE1 0x060253b4, sim 1.00]
+0x06033ea8 func snd_SetPending hand provisional stores pending index and flag from byte table [from GG1 STAGE1 0x06025440]
+0x06033ec8 func snd_TickPending hand provisional decrements two countdown timers, clears pending ids at zero [from GG1 STAGE1 0x06025460]
+0x06033f2c func mem_CopyPaletteBlock hand provisional copies 0x90-stride block of 3-word groups from table into buffer [from GG1 STAGE1 0x060254c4]
+0x06033f88 func mem_CopyColorTable hand provisional copies 2- or 3-word groups per row, rows 6 if index 2 else 3 [from GG1 STAGE1 0x06025520]
+0x06033fe8 func effect_SetEntry hand provisional sets effect entry
+0x06034068 func mem_CopyColorTableFixed hand provisional copies 3-word groups from fixed table offset into buffer [from GG1 STAGE1 0x06025580]
+0x060340b8 func mem_CopyRandomTable hand provisional picks random row via rand callee and copies 2-word groups into buffer [from GG1 STAGE1 0x06025698]
+0x06034198 func mem_CopyRandomTableB hand provisional random row copy of 2-word groups, mode flag selects source [from GG1 STAGE1 0x06025754]
+0x06034252 func effect_SpawnA hand provisional spawns effect A
+0x06034388 func effect_SpawnB hand provisional spawns effect B
+0x060344c2 func vdp_UploadPlayerTiles hand provisional uploads two tile blocks
+0x06034514 func vdp_FillTileBlock hand provisional fills tile block
+0x060345aa func vdp_CopyPaletteBlock hand provisional copies palette block via copier
+0x060345f0 func hud_SetEntryA hand provisional sets hud entry A
+0x06034682 func hud_DrawGauge hand provisional draws gauge
+0x06034830 func hud_UpdateA hand provisional updates hud A
+0x06034904 func hud_ClearA hand provisional clears hud A
+0x06034986 func hud_UpdateB hand provisional updates hud B
+0x06034aa6 func hud_SetEntryB hand provisional sets hud entry B
+0x06034b94 func mem_CopyPaletteBlock_34b94 hand provisional [from GG1 STAGE1 0x060254c4, sim 0.92]
+0x06034be4 func game_InitMatch hand provisional initializes match state
+0x06034eb0 func game_SetupPlayers hand provisional sets up players
+0x06034ff8 func sys_WaitSyncLoop hand provisional loops setting flags and calling sync callee until condition clears [from GG1 STAGE1 0x06025844]
+0x06035056 func sys_SetSyncFlags hand provisional sets sync flag bytes in a short loop [from GG1 STAGE1 0x060258a2]
+0x060350c6 func game_StoreWord hand provisional stores word to global
+0x0603566c func game_UpdateScores hand provisional updates scores
+0x06035930 func snd_PlayWrapPos hand provisional sound play with position
+0x0603597e func snd_ComputePan hand provisional computes pan from position
+0x06035a1c func math_FindHighBit hand provisional counts shift steps
+0x06035a8c func bullet_ClearTable_35a8c hand provisional [from GG1 STAGE1 0x0601ab4c, sim 0.93]
+0x06035aac func sys_BiosVec0 hand provisional bios vector jump 0
+0x06035ab4 func sys_BiosVec1 hand provisional bios vector jump 1
+0x06035abc func sys_BiosVec2 hand provisional bios vector jump 2
+0x06035ac4 func sys_BiosVec3 hand provisional bios vector jump 3
+0x06035acc func snd_CallBiosParams hand provisional sound bios call with params
+0x06035b32 func sys_BiosVecParam hand provisional bios vector jump with param
+0x06035b40 func sys_BiosVec4 hand provisional bios vector jump 4
+0x06035b48 func sys_BiosVec5 hand provisional bios vector jump 5
+0x06035b50 func sys_BiosVec6 hand provisional bios vector jump 6
+0x06035b58 func game_SetModeIfEnabled hand provisional sets mode if enabled
+0x06035b94 func ent_ResetHistory hand provisional sets two history halfwords to constant and third to zero [from GG1 STAGE1 0x0602cc50]
+0x06035bb2 func game_ClearArrayA hand provisional clears array A
+0x06035bf4 func sys_CallBiosLoop hand provisional calls bios in loop
+0x06035c34 func sys_CallBiosParams hand provisional calls bios with params
+0x06035c80 func sys_CallBiosF hand provisional calls bios with 0xf
+0x06035c9c func sys_BiosVec7 hand provisional bios vector jump 7
+0x06035ca4 func sys_BiosVec8 hand provisional bios vector jump 8
+0x06035cac func game_FindSlotByKey hand provisional finds slot by key
+0x06035e4c func text_PutStringVdp2 hand provisional puts string to VDP2 cells
+0x06035e78 func game_InitSlotsB hand provisional initializes slots B
+0x06035f5a func game_InitSlotsC hand provisional initializes slots C
+0x06035ffc func math_BuildRotMatrixXYZ hand provisional: combines three sin and cos table entries with fixed multiply into matrix terms [from GG1 STAGE1 0x0603bcdc]
+0x060360f8 func math_BuildRotMatrixZYX hand provisional: variant of rotation matrix build with different multiply order [from GG1 STAGE1 0x0603bdd8]
+0x06036238 func gfx3d_DrawModelA hand provisional 3D model draw A
+0x060367ea func gfx3d_DrawModelB hand provisional 3D model draw B
+0x06036c4a func gfx_SortEdgeListA hand provisional [from GG1 STAGE1 0x0603ca12, sim 1.00]
+0x06036ce0 func gfx_BuildEdgeCountA hand provisional: calls FUN_0603d5e8, computes edge count from list pointers [fuzzy 0.98 STAGE1 0x0603caa8] [from GG1 STAGE2 0x0603b8fc]
+0x06036d94 func gfx_TransformObjectA hand provisional [from GG1 STAGE2 0x0603b9b0, sim 0.97]
+0x06036fe8 func gfx_TransformTerrainA hand provisional [from GG1 STAGE2 0x0603bc04, sim 0.94]
+0x060371b8 func gfx_TransformTerrainA_371b8 hand provisional [from GG1 STAGE2 0x0603bc04, sim 0.91]
+0x0603736c func gfx3d_ProjectA hand provisional projects points A
+0x06037528 func gfx3d_TransformA hand provisional transform A
+0x06037674 func gfx3d_TransformB hand provisional transform B
+0x060377ec func gfx3d_TransformC hand provisional transform C
+0x06037a84 func gfx3d_ProjectB hand provisional projects points B
+0x06037c68 func gfx3d_TransformD hand provisional transform D
+0x06038178 func gfx3d_TransformE hand provisional transform E
+0x060387f4 func gfx3d_DrawListA hand provisional draws list A
+0x060389c4 func gfx3d_DrawListB hand provisional draws list B
+0x06038b28 func gfx3d_TransformF hand provisional transform F
+0x06038b9c func gfx3d_TransformG hand provisional transform G
+0x06038c70 func gfx3d_TransformH hand provisional transform H
+0x06038d28 func gfx3d_DrawModelC hand provisional 3D model draw C
+0x06039540 func gfx_CopyVertexTable hand provisional: copies 16-bit and 32-bit entries per count between tables [from GG1 STAGE1 0x0603e680]
+0x060395b4 func gfx_ScanVertexMarkers hand provisional: scans word list for 0xfffffffe and 0xffffffff terminators [from GG1 STAGE1 0x0603e6f4]
+0x06039654 func cd_WrapperEf30 hand provisional returns result of FUN_0608ef30 [r2 rep STAGE3 0x0608eef2] [from GG1 STAGE3 0x0608eef2]
+0x06039660 func gfx3d_DrawModelD hand provisional 3D model draw D
+0x06039b00 func gfx3d_DrawModelE hand provisional 3D model draw E
+0x0603a0b2 func gfx3d_DrawModelF hand provisional 3D model draw F
+0x0603a512 func gfx_SortEdgeListA_3a512 hand provisional [from GG1 STAGE1 0x0603ca12, sim 1.00]
+0x0603a5a8 func gfx_BuildEdgeCountB hand provisional: duplicate of BuildEdgeCountA calling FUN_0603fb20 [fuzzy 0.98 STAGE1 0x0603f324] [from GG1 STAGE2 0x0603e178]
+0x0603a660 func gfx_TransformObjectB hand provisional [from GG1 STAGE2 0x0603e230, sim 0.97]
+0x0603a8b8 func gfx_TransformTerrainB hand provisional [from GG1 STAGE2 0x0603e48c, sim 0.94]
+0x0603aa8c func gfx_TransformTerrainB_3aa8c hand provisional [from GG1 STAGE2 0x0603e48c, sim 0.91]
+0x0603ac44 func gfx3d_ProjectC hand provisional projects points C
+0x0603ae04 func gfx3d_TransformI hand provisional transform I
+0x0603af50 func gfx3d_TransformJ hand provisional transform J
+0x0603b0c8 func gfx3d_TransformK hand provisional transform K
+0x0603b360 func gfx3d_ProjectD hand provisional projects points D
+0x0603b544 func gfx3d_TransformL hand provisional transform L
+0x0603ba60 func gfx3d_DrawModelG hand provisional 3D model draw G
+0x0603c108 func gfx3d_DrawListC hand provisional draws list C
+0x0603c2e4 func gfx3d_DrawListD hand provisional draws list D
+0x0603c448 func gfx3d_SetEntry hand provisional sets 3D entry
+0x0603c5a0 func gfx3d_TransformObject hand provisional transforms object 436-byte struct
+0x0603c728 func gfx3d_SceneSetup hand provisional large scene setup
+0x0603cef0 func gfx_ProjectPointToScreen hand provisional: takes 3 coords, scales via sin and cos tables around camera angle, returns screen position [from GG1 STAGE1 0x06040350]
+0x0603d128 func gfx_DrawLineStrip hand provisional [from GG1 STAGE2 0x0603f3dc, sim 1.00]
+0x0603d2dc func gfx_DrawRadarSweep hand provisional [from GG1 STAGE2 0x0603f594, sim 0.93]
+0x0603d3c4 func radar_DrawBlip hand provisional [from GG1 STAGE1 0x06040834, sim 0.97]
+0x0603d55c func radar_DrawPlayerMarker hand provisional [from GG1 STAGE1 0x060409d4, sim 0.91]
+0x0603d610 func gfx3d_Helper3d610 hand provisional 3D helper
+0x0603d6b0 func math_NormalizeShiftPair hand provisional [from GG1 STAGE1 0x06040d40, sim 0.99]
+0x0603d730 func gfx3d_FindObject hand provisional finds object
+0x0603d7f4 func gfx3d_ObjectQuery hand provisional object query
+0x0603d914 func terrain_GetCellType hand provisional: bounds check x,y then reads terrain cell byte and times 0x32 [from GG1 STAGE1 0x06040e84]
+0x0603da3c func tbl_ClearSlots hand provisional [from GG1 STAGE1 0x06040fac, sim 1.00]
+0x0603da6c func tbl_FindFreeSlot hand provisional [from GG1 STAGE1 0x06040fdc, sim 1.00]
+0x0603daa8 func tbl_ClearSlots_3daa8 hand provisional [from GG1 STAGE1 0x06040fac, sim 1.00]
+0x0603dad8 func tbl_FindFreeSlot_3dad8 hand provisional [from GG1 STAGE1 0x06040fdc, sim 1.00]
+0x0603db14 func gfx3d_DrawModelH hand provisional 3D model draw H
+0x0603dcb4 func hw_WriteParamBlock hand provisional [from GG1 STAGE1 0x06041038, sim 0.99]
+0x0603dcf0 func hw_WriteParamBlock_3dcf0 hand provisional [from GG1 STAGE1 0x06041038, sim 0.99]
+0x0603dd2c func wait_FlagClear hand provisional: busy-wait until masked flag word clears [from GG1 STAGE1 0x0604106c]
+0x0603dd54 func timer_LoadA hand provisional loads timer A
+0x0603dd80 func hw_SetCallbackPtr hand provisional [from GG1 STAGE1 0x060410a8, sim 0.93]
+0x0603dda0 func timer_LoadB hand provisional loads timer B
+0x0603dde0 func timer_Copy hand provisional copies timer pair
+0x0603df4c func hw_SetModeByte11 hand provisional: stores constant 0x11 into a mode byte [from GG1 STAGE1 0x060411a0]
+0x0603df9c func math_StoreMulResult hand provisional stores MACH MACL
+0x0603dfa8 func nop_Stub_3dfa8 hand provisional empty function
+0x0603dfb4 func hw_WriteRegBits hand provisional writes register bits
+0x0603dfe6 func hw_PollA hand provisional polls hardware A
+0x0603e338 func hw_PollB hand provisional polls hardware B
+0x0603e730 func hw_WdtReset hand provisional writes watchdog registers
+0x0603e790 func hw_StoreZero hand provisional writes zero to table
+0x0603e7a8 func math_StoreFixedSplit hand provisional [from GG1 STAGE1 0x06089a10, sim 1.00]
+0x0603e7cc func math_Atan2Fixed hand provisional arctangent via lookup table [x PROG4 0x06011da4]
+0x0603eb84 func game_InitCounters hand provisional initializes counters
+0x0603ed70 func game_CopyByteA hand provisional copies byte A
+0x0603ed7a func game_CopyByteB hand provisional copies byte B
+0x0603ed86 func game_UpdateMainLarge hand provisional large update
+0x0603fb98 func game_ClearBlockA hand provisional clears block
+0x0603fc18 func game_UpdateAILarge hand provisional large AI/main update
+0x0604104c func game_ScanPlayers hand provisional scans players
+0x0604116e func game_ScanTableB hand provisional scans table
+0x06041208 func game_SaveStateA hand provisional saves state A
+0x06041262 func game_RestoreStateA hand provisional restores state A
+0x06041314 func game_StoreTable hand provisional stores table entry
+0x0604132a func game_SetFlagIfZero hand provisional sets flag
+0x0604140c func game_ResetPlayerFlags hand provisional resets player flags
+0x0604158e func vdp_ClearRegA hand provisional clears VDP2 reg A
+0x060415e2 func vdp_ClearRegB hand provisional clears VDP2 reg B
+0x0604163a func game_CheckDistance hand provisional checks distance
+0x060416c4 func game_ComputeRelativePos hand provisional computes relative position
+0x06041810 func game_StepPlayerR hand provisional player step R
+0x06041aea func game_StepPlayerS hand provisional player step S
+0x06041db6 func game_StepPlayerT hand provisional player step T
+0x06041ebc func game_StepPlayerU hand provisional player step U
+0x06041fa6 func game_FindTargetLoop hand provisional target search loop
+0x060422ce func game_SetPlayerAttr hand provisional sets player attrs
+0x0604234e func game_SetPlayerPos hand provisional sets player pos
+0x06042454 func game_DistanceCheck hand provisional distance check helper
+0x060424c8 func game_StepPlayerV hand provisional player step V
+0x060425a4 func game_ReadTable hand provisional reads table
+0x06042608 func vdp_UpdateRegsA hand provisional updates VDP regs A
+0x060426d0 func vdp_UpdateRegsB hand provisional updates VDP regs B
+0x0604273c func game_StepPlayerW hand provisional player step W
+0x060427f4 func vdp_UpdateRegsC hand provisional updates VDP regs C
+0x06042814 func game_ClearArrayB hand provisional clears array B
+0x06042852 func text_CopyBytes hand provisional copies bytes
+0x060428d4 func text_ClearLine hand provisional clears line
+0x06042934 func game_SetPlayerAttrB hand provisional sets player attrs B
+0x06042a10 func game_StepPlayerX hand provisional player step X
+0x06042f5c func unit_SetStateA hand provisional sets unit state A
+0x06043076 func unit_SetStateB hand provisional sets unit state B
+0x06043170 func unit_InitA hand provisional inits unit A
+0x0604336c func unit_RunHandler hand provisional runs unit handler
+0x06043586 func unit_ComputeOffset hand provisional computes offset
+0x0604369e func unit_UpdateA hand provisional unit update A
+0x060438ee func unit_UpdateB hand provisional unit update B
+0x06043a6a func unit_UpdateC hand provisional unit update C
+0x06043b98 func unit_ClearA hand provisional clears unit A
+0x06043c02 func unit_ClearB hand provisional clears unit B
+0x06043c8a func unit_QueryA hand provisional unit query A
+0x06043e1c func unit_QueryB hand provisional unit query B
+0x06043fbc func unit_Spawn hand provisional spawns unit
+0x0604410c func unit_SpawnLarge hand provisional large spawn
+0x060444f8 func unit_FindSlot hand provisional finds slot
+0x06044752 func unit_ReadByte hand provisional reads unit byte
+0x06044770 func unit_CheckLimit hand provisional checks limit
+0x0604479a func unit_CheckZero hand provisional checks zero
+0x0604482e func unit_ResetTableA hand provisional resets table A
+0x060448ac func unit_ResetTableB hand provisional resets table B
+0x06044950 func unit_ClearAll hand provisional clears all
+0x060449b6 func unit_UpdateText hand provisional updates text
+0x06044bc2 func unit_CopyTable hand provisional copies table
+0x06044c80 func unit_UpdateD hand provisional unit update D
+0x06044da4 func unit_UpdateE hand provisional unit update E
+0x06044e56 func unit_ClampByMode hand provisional clamps by mode
+0x06044e94 func unit_UpdateF hand provisional unit update F
+0x06044fa4 func unit_BehaviorA hand provisional large behavior A
+0x06045848 func unit_BehaviorB hand provisional large behavior B
+0x06046688 func unit_BehaviorC hand provisional large behavior C
+0x06047426 func unit_BehaviorD hand provisional behavior D
+0x06047992 func unit_BehaviorE hand provisional behavior E
+0x06047f36 func unit_BehaviorF hand provisional behavior F
+0x06048300 func unit_BehaviorG hand provisional behavior G
+0x060487e2 func unit_BehaviorH hand provisional behavior H
+0x06048b70 func unit_SpawnProjectile hand provisional spawns projectile
+0x06048cf2 func math_AngleDiffSigned hand provisional [from GG1 STAGE1 0x0602ca22, sim 0.99]
+0x06048d78 func unit_TryAction hand provisional tries action
+0x06048e38 func unit_AddValue hand provisional adds value
+0x06048ec2 func unit_ClampLow hand provisional clamps low
+0x06048f06 func unit_ClampHigh hand provisional clamps high
+0x06048f54 func unit_RandomCheck hand provisional random check
+0x06048fc2 func unit_ApplyOffset hand provisional applies offset
+0x060490d0 func unit_CheckIdle hand provisional checks idle
+0x0604912a func unit_AimAtTarget hand provisional aims at target
+0x06049310 func unit_BehaviorI hand provisional large behavior I
+0x06049b0e func unit_BehaviorJ hand provisional behavior J
+0x06049eb4 func unit_BehaviorK hand provisional behavior K
+0x0604a2e4 func unit_BehaviorL hand provisional behavior L
+0x0604a53c func unit_GetTargetPos hand provisional gets target pos
+0x0604a6be func unit_ComputeVector hand provisional computes vector
+0x0604a8d8 func unit_ClearFlag hand provisional clears flag
+0x0604a910 func unit_CheckFlag hand provisional checks flag
+0x0604a9bc func unit_SetAttack hand provisional sets attack
+0x0604aab6 func unit_RandomDelay hand provisional random delay
+0x0604ab62 func unit_SetTarget hand provisional sets target
+0x0604ac02 func unit_ClearTarget hand provisional clears target
+0x0604ac80 func unit_RandomState hand provisional random state
+0x0604ad22 func unit_RandomAction hand provisional random action
+0x0604adc4 func unit_RandomMove hand provisional random move
+0x0604ae76 func unit_ClearHandler hand provisional clears handler
+0x0604ae9e func unit_BehaviorM hand provisional behavior M
+0x0604b1f0 func unit_BehaviorN hand provisional behavior N
+0x0604b414 func unit_BehaviorO hand provisional behavior O
+0x0604b754 func unit_BehaviorP hand provisional behavior P
+0x0604baa2 func unit_BehaviorQ hand provisional behavior Q
+0x0604bd90 func unit_BehaviorR hand provisional behavior R
+0x0604dac8 func math_DivStepSigned hand provisional: SH-2 DIV1 step sequence unrolled, signed 32-bit division helper [from GG1 STAGE1 0x06043440]
+0x0604db7c func math_DivStepUnsigned hand provisional: SH-2 DIV1 step sequence unrolled, unsigned division helper [from GG1 STAGE1 0x060434f4]
+0x0604dc24 func math_DivStep16 hand provisional: DIV1 step chain for 16-bit shifted divisor [from GG1 STAGE1 0x06047c80]
+0x0604dc74 func math_DivStep64by32 hand provisional: SH-2 DIV1 step chain long division, divisor r0, dividend r1 quotient [from GG1 STAGE1 0x0604359c]
+0x0604dd5c func math_ShiftDispatch_3 hand provisional: variable shift via byte offset jump table [from GG1 STAGE1 0x06047cf0]
+0x0604de1c func math_ShiftDispatch hand provisional: variable shift count 0..31 via jump table, falls to helper [from GG1 STAGE1 0x0604373c]
+0x0604df14 func math_Abs hand returns absolute value of int [from GG1 STAGE1 0x06043834]
+0x0604df24 func fp_BinaryOpCheckError hand provisional [from GG1 STAGE1 0x06043844, sim 1.00]
+0x0604dfcc func fp_DoubleSub hand provisional: soft-float double subtract, flips sign of operand then aligns and adds [fuzzy 1.00 STAGE1 0x06043990] [from GG1 STAGE2 0x060427c8]
+0x0604e076 func fp_DoubleAddCore hand provisional: soft-float double add core entry, aligns mantissas by exponent difference [from GG1 STAGE1 0x06043a3a]
+0x0604e084 func fp_DoubleAdd hand provisional: soft-float double add, orders operands by magnitude, shifts mantissas [fuzzy 1.00 STAGE1 0x06043a48] [from GG1 STAGE2 0x06042880]
+0x0604e286 func fp_DoubleAddSwapArgs hand provisional tail wrapper calls fp_DoubleAddCore with operand pairs swapped [fuzzy 0.93 STAGE1 0x06043c4a] [from GG1 STAGE2 0x06042a82]
+0x0604e3d0 func fp_DoubleMul hand provisional: soft-float double multiply, exponent sum, handles inf/zero, sign xor [from GG1 STAGE1 0x06044000]
+0x0604e544 func fp_DoubleToInt hand provisional: double to integer conversion, exponent range check, mantissa shift [from GG1 STAGE1 0x06044174]
+0x0604e5d0 func fp_IntToFloat hand provisional: signed int to single float, normalizes by shifting left [from GG1 STAGE1 0x06044200]
+0x0604e6b6 func fp_DoubleSetInfResult hand provisional: stores infinity exponent 0x7ff with sign, mantissa zero [from GG1 STAGE1 0x0604433e]
+0x0604e6be func fp_DoubleSetNanResult hand provisional: stores NaN-like exponent 0x7ff result [from GG1 STAGE1 0x06044346]
+0x0604e6c8 func fp_DoubleDiv hand provisional: soft-float double divide, special cases inf/zero via set-result stubs [fuzzy 0.99 STAGE1 0x06044350] [from GG1 STAGE2 0x06043188]
+0x0604e838 func fp_UIntToDouble hand provisional: unsigned int to double, normalize leading bit, exponent 0x100000 scaling [from GG1 STAGE1 0x06044518]
+0x0604e878 func fp_ErrnoWrapper hand provisional: calls math error helper with args 1,0 and stack arguments [from GG1 STAGE1 0x06044558]
+0x0604e8b4 func fp_BinaryOpCheckError_4e8b4 hand provisional [from GG1 STAGE1 0x06043844, sim 1.00]
+0x0604e944 func bits_ExtractMasked hand provisional: builds bit mask from width/shift in r1 and masks r0 [from GG1 STAGE1 0x06044624]
+0x0604e9ac func fp_DoubleUnpack hand provisional: splits double into exponent/mantissa, inf/NaN detection [from GG1 STAGE1 0x0604468c]
+0x0604eaa0 func fp_ExtendedToDoubleRound hand provisional: packs 16-bit exponent extended value into double with overflow checks [from GG1 STAGE1 0x06044780]
+0x0604ebd4 func fp_ExtendedToFloatRound hand provisional: packs extended value into narrower float, denormal shift loop [from GG1 STAGE1 0x060448b4]
+0x0604ecdc func mem_CopyBytesCount hand provisional copies bytes by count
+0x0604ed34 func math_ShiftDispatch_2 hand provisional: variable shift via byte offset jump table [from GG1 STAGE1 0x060449dc]
+0x0604ed40 func math_ShiftDispatch_tail hand provisional: tail jump through shift table indexed by r1 [from GG1 STAGE1 0x060449e8]
+0x0604edd4 func stdio_vfprintf hand provisional: format string interpreter, checks FILE flags, calls integer/float formatters 060452a6 060454e0 [fuzzy 0.99 STAGE1 0x06044a7c] [from GG1 STAGE2 0x060438b4]
+0x0604f5fe func printf_FormatInt hand provisional: integer to ASCII for %d %i (100, 0x69) with digit buffer [from GG1 STAGE1 0x060452a6]
+0x0604f838 func printf_FormatFloat hand provisional: double to decimal digits for %e %f %g with rounding and padding [fuzzy 1.00 STAGE1 0x060454e0] [from GG1 STAGE2 0x06044318]
+0x06050014 func printf_RoundDigits hand provisional: rounds digit string at position, propagates carry [from GG1 STAGE1 0x06045cbc]
+0x06050074 func printf_PutChars hand provisional: appends characters to output buffer or file, updates counters [from GG1 STAGE1 0x06045d1c]
+0x060500dc func printf_TerminateString hand provisional: sprintf mode writes NUL at output pointer [from GG1 STAGE1 0x06045d84]
+0x060500f0 func stdio_GetErrorFlag hand provisional: returns FILE flag 0x40 unless string mode [from GG1 STAGE1 0x06045d98]
+0x0605013c func fp_ExtendedAddSub hand provisional [from GG1 STAGE1 0x06045de4, sim 0.96]
+0x06050638 func fp_ExtendedAdd hand provisional: extended add, orders operands by exponent, aligns mantissas [from GG1 STAGE1 0x060464e4]
+0x0605077c func fp_ExtendedAddCore hand provisional: sign xor, exponent difference, 64-bit mantissa subtract path [from GG1 STAGE1 0x06046628]
+0x06050860 func fp_ExtendedDiv hand provisional: exponent compare and iterative mantissa subtract for quotient [from GG1 STAGE1 0x0604670c]
+0x06050928 func fp_ExtendedScaleExp hand provisional: adds integer to extended exponent with overflow underflow clamp [from GG1 STAGE1 0x060467d4]
+0x060509e6 func fp_ExtendedMul hand provisional: exponent sum, 64-bit mantissa multiply with partial products [from GG1 STAGE1 0x06046892]
+0x06050aa8 func fp_ExtendedCmpEqual hand provisional: compares two extended values returns 1 if equal [from GG1 STAGE1 0x060469d4]
+0x06050b10 func fp_ExtendedCmpLess hand provisional: compares two extended values by sign exponent mantissa [from GG1 STAGE1 0x06046a3c]
+0x06050b94 func fp_ExtendedClassify hand provisional: returns class bits zero/inf/NaN/denormal and sign [from GG1 STAGE1 0x06046ac0]
+0x06050bd0 func math_DivStep64by32_2 hand provisional: second variant of DIV1 chain division, zero divisor stores error value [from GG1 STAGE1 0x06043664]
+0x06050c94 func stub_06046b08 hand indirect jump through table indexed by r0 [from GG1 STAGE1 0x06046b08]
+0x06050d2c func fp_ExtendedStoreResult hand provisional: runs helpers then stores 7 byte result [fuzzy 1.00 STAGE1 0x06046ba0] [from GG1 STAGE2 0x060459d8]
+0x06050d94 func fp_StrToExtended hand provisional: parse mantissa digits into extended with exponent, uses helper calls [from GG1 STAGE1 0x06046c08]
+0x06051028 func fp_ExtendedDigitLoop hand provisional: generates decimal digit chars into buffer, NUL terminated [fuzzy 1.00 STAGE1 0x06047320] [from GG1 STAGE2 0x06046158]
+0x06051150 func memmove hand copies bytes handling overlap, forward path when dest below src [from GG1 STAGE1 0x06047448]
+0x06051194 func fp_DoubleBothFinite hand provisional: returns 0 if either double is NaN or infinity [from GG1 STAGE1 0x0604748c]
+0x06051228 func strlen hand counts bytes until NUL [from GG1 STAGE1 0x06047520]
+0x06051238 func fp_ExtendedRepeatMul hand provisional [from GG1 STAGE2 0x060463ac, sim 0.97]
+0x060512b0 func mem_IsZeroBytes hand returns 0 if any byte nonzero in range [from GG1 STAGE1 0x060475ec]
+0x060512d0 func fp_ExtendedPowInt hand provisional: integer power via helper, handles negative exponent by reciprocal [from GG1 STAGE1 0x0604760c]
+0x060513d0 func fp_DoubleToExtendedConvert hand provisional: unpack double and truncate via 0604776e 0604789c [fuzzy 0.92 STAGE1 0x0604770c] [from GG1 STAGE2 0x06046544]
+0x06051432 func fp_DoubleUnpackParts hand provisional: splits double into sign exponent mantissa words, zero handling [fuzzy 1.00 STAGE1 0x0604776e] [from GG1 STAGE2 0x060465a6]
+0x06051560 func fp_DoubleTruncateFrac hand provisional: clears fractional mantissa bits of double by exponent [from GG1 STAGE1 0x0604789c]
+0x0605169c func bigint_ShiftLeftBytesBack hand provisional: shifts byte array left by bits from end to start with carry [from GG1 STAGE1 0x060479d8]
+0x0605170c func table_CopyEntry8 hand copies 8 byte entry from table index*8 to destination [from GG1 STAGE1 0x06047a48]
+0x06051730 func bigint_ShiftLeftBytes hand provisional: shifts byte array left by bits start to end with carry [from GG1 STAGE1 0x06047a6c]
+0x060517ac func bigint_CompareSubWords hand provisional: word-wise subtract with borrow, returns true if equal [from GG1 STAGE1 0x06047ae8]
+0x0605183c func memcmp hand provisional [from GG1 STAGE1 0x06047b78, sim 1.00]
+0x06051870 func fp_ExtendedUnpackHeader hand provisional: extracts sign flag exponent from 16-bit header, copies 7 mantissa bytes [fuzzy 1.00 STAGE1 0x06047bac] [from GG1 STAGE2 0x060469e4]
+0x06051910 func memcmp_51910 hand provisional [from GG1 STAGE1 0x06047b78, sim 1.00]
+0x06051944 func bigint_DivLoop hand provisional: 0x42 iteration shift-subtract loop on byte arrays [from GG1 STAGE1 0x06047d90]
+0x06051ad8 func fp_DoubleIsNaN hand provisional: returns 1 if exponent all ones with nonzero mantissa [from GG1 STAGE1 0x06047f24]
+0x06051b0c func bigint_ShiftLeft1 hand provisional: shifts byte array left one bit with carry propagation [from GG1 STAGE1 0x06047f58]
+0x06051b50 func fp_ExtendedMulStep hand provisional: adds exponents, multiplies mantissa bytes, normalizes by 0x80 bit [from GG1 STAGE1 0x06047f9c]
+0x06051bc0 func fp_IntToExtended hand provisional: signed int to extended, abs then normalize, sets sign [from GG1 STAGE1 0x0604800c]
+0x06051d14 func bigint_TestMaskBits hand provisional: locates byte and bit mask, tests neighbouring bits [from GG1 STAGE1 0x06048160]
+0x06051df4 func bigint_FindFirstSetBit hand provisional: scans bytes from index for first nonzero bit [from GG1 STAGE1 0x06048240]
+0x06051e7c func fp_DoubleCompareLess hand provisional: double compare with NaN/zero cases, sign aware [from GG1 STAGE1 0x060482c8]
+0x06051f24 func fp_DoubleIsUnordered hand provisional: returns 1 if either operand is NaN [from GG1 STAGE1 0x06048370]
+0x06051fb8 func bigint_AddWords hand provisional: adds 16-bit word arrays with carry from end [from GG1 STAGE1 0x06048404]
+0x06052018 func bigint_MulWords hand provisional: schoolbook multiply of 16-bit word arrays [from GG1 STAGE1 0x06048464]
+0x060520fc func fp_NormalizeExtended hand provisional: finds leading byte and bit, adjusts exponent by 8 per byte [from GG1 STAGE1 0x06048548]
+0x06052194 func bigint_ShiftRight1 hand provisional: shifts byte array right one bit with carry [from GG1 STAGE1 0x060485e0]
+0x060521e0 func memset hand fills n bytes with value [from GG1 STAGE1 0x0604862c]
+0x06097c50 func vdp_InitSystem hand provisional [from GG1 STAGE2 0x060867a0, sim 0.95]
+0x06097d1c func vdp2_SetPlaneConfig hand provisional sets plane mode from param masked 7 using table, scale doubles on param 1 [r2 rep GSTART 0x0601b1dc] [from GG1 GSTART 0x0601b1dc]
+0x06097dfc func vdp1_SetClipArea hand provisional [from GG1 STAGE1 0x06087b14, sim 0.98]
+0x06097ef0 func snd_ClearFlagB hand provisional clears flag
+0x06097f0c func vdp2_SetDisplayModeBits hand provisional: writes TVMD style bits from three mode args [fuzzy 0.94 STAGE1 0x06087c24] [from GG1 GSTART 0x06017750]
+0x060980c0 func table_CopyWords8 hand provisional [from GG1 STAGE1 0x06087dd8, sim 0.90]
+0x060980e8 func scroll_ResetState hand provisional calls init and zeroes many scroll position and speed globals [r2 rep GSTART 0x060189ec] [from GG1 GSTART 0x060189ec]
+0x06098324 func vdp2_SetRotationOrigin hand provisional: stores origin when mode 1, clears flag by conditions [r2 rep GSTART 0x06018c28] [from GG1 GSTART 0x06018c28]
+0x0609842a func scroll_AccumulatePosition hand provisional adds deltas to position by mode 1 or 2, accumulates third delta [r2 rep GSTART 0x06018d2e] [from GG1 GSTART 0x06018d2e]
+0x0609857c func vdp2_ClampScroll hand provisional: clamps scroll values by mode 1/2/4/8 [r2 rep GSTART 0x06018e80] [from GG1 GSTART 0x06018e80]
+0x060986a8 func vdp2_FlushPendingCopies_2 hand provisional if dirty flags set copies word buffers via mem_CopyWords16 then clears flags [r2 rep GSTART 0x06018fac] [from GG1 GSTART 0x06018fac]
+0x0609878e func vdp2_FlushPendingCopies_2_2 hand provisional: flag 1/2 copies word blocks with mem_CopyWords16 [r2 rep GSTART 0x06019092] [from GG1 GSTART 0x06019092]
+0x06098828 func mem_CopyWords16_98828 hand provisional [from GG1 STAGE1 0x0601540e, sim 1.00]
+0x060988a8 func vdp2_FlushColorCopies hand provisional: copies palette blocks by flag bits 0x80/0x40/0x20 [r2 rep GSTART 0x060191ac] [from GG1 GSTART 0x060191ac]
+0x060989b4 func vdp2_SetBitFields hand provisional [from GG1 STAGE1 0x060886cc, sim 0.98]
+0x06098a34 func sys_SetTransferMode hand provisional: sets mode 2 or 3 by command value, clears counters [fuzzy 0.97 STAGE1 0x0608874c] [from GG1 GSTART 0x0601ac14]
+0x06098afc func sys_WaitTransferDone hand provisional: sets request flag and spins until flags clear [from GG1 STAGE1 0x06088814]
+0x06098b1c func sys_ResetTransferState hand provisional: clears transfer flags and counters [fuzzy 0.95 STAGE1 0x06088834] [from GG1 GSTART 0x0601acfc]
+0x06098b64 func sys_PollTransfer hand provisional [from GG1 GSTART 0x0601ad44, sim 0.99]
+0x06098c48 func scu_UpdateTransferState hand provisional resolves pending transfer state flags, ORs control bits into register [r2 rep GSTART 0x0601ae28] [from GG1 GSTART 0x0601ae28]
+0x06098d14 func snd_ProcessEventB hand provisional processes event
+0x06098e64 func snd_WriteRegsB hand provisional writes sound regs
+0x060991f4 func math_FixedMul hand 16.16 fixed multiply via 64-bit product shifted 16 [from GG1 STAGE1 0x060899fc]
+0x06099208 func math_StoreFixedSplit_99208 hand provisional [from GG1 STAGE1 0x06089a10, sim 1.00]
+0x0609926c func vdp2_ResetAll hand provisional vdp2_InitRegisters, several init calls, clears 8-entry table [r2 rep GSTART 0x060192b8] [from GG1 GSTART 0x060192b8]
+0x060992be func snd_ReadField hand provisional reads field bits
+0x06099310 func vdp2_ConfigScrollPlane hand provisional: large register setup of scroll plane control bits by flags [fuzzy 0.93 STAGE1 0x06089b18] [from GG1 GSTART 0x0601935c]
+0x06099890 func vdp2_UpdateScrollPlanes hand provisional: big per-frame plane config via vdp2_ConfigScrollPlane [r2 rep GSTART 0x060198dc] [from GG1 GSTART 0x060198dc]
+0x06099e54 func vdp2_SetPlaneOffsets hand provisional: adds three offsets to registers +4 +6 +8 or +10 by plane select [fuzzy 0.96 STAGE1 0x0608a65c] [from GG1 GSTART 0x06019ea0]
+0x06099f38 func vdp2_InitRegisters hand provisional: long sequence of masked VDP2 register writes with delay helper [fuzzy 1.00 STAGE1 0x0608a740] [from GG1 GSTART 0x06019f84]
+0x0609a4a8 func vdp2_ClearRegsA hand provisional: clears bit masks in a register block [fuzzy 0.98 STAGE1 0x0608acb0] [from GG1 GSTART 0x0601a4f4]
+0x0609a584 func vdp2_SetRegsB hand provisional: sets bits in register block and writes constant 4 [fuzzy 0.97 STAGE1 0x0608ad8c] [from GG1 GSTART 0x0601a5d0]
+0x0609a614 func vdp2_ClearRegsC hand provisional: clears bits in three registers [fuzzy 0.98 STAGE1 0x0608ae1c] [from GG1 GSTART 0x0601a660]
+0x0609a6f0 func vdp2_ClearRegsD hand provisional: clears bits in registers and zeroes third [fuzzy 0.97 STAGE1 0x0608aef8] [from GG1 GSTART 0x0601a73c]
+0x0609a7ac func vdp2_ClearRegsE hand provisional: clears many bit masks in register sequence [fuzzy 0.99 STAGE1 0x0608afb4] [from GG1 GSTART 0x0601a7f8]
+0x0609abc8 func math_SinLookup hand provisional: masks angle, folds quadrant, interpolates sine table, negates [from GG1 STAGE1 0x0608b3d0]
+0x0609ac64 func math_ArcLookup hand provisional: inverse trig by thresholds using table interpolation [from GG1 STAGE1 0x0608b46c]
+0x0609bca0 func vdp2_UpdateLineScroll hand provisional: per plane mode update using two helper calls [fuzzy 0.95 STAGE1 0x0608c4a8] [from GG1 GSTART 0x0601c544]
+0x0609be14 func vdp2_ApplyPlaneTable hand provisional: picks table entry by mode 1/2, applies if set [r2 rep GSTART 0x0601c6b8] [from GG1 GSTART 0x0601c6b8]
+0x0609bf98 func flags_UpdateBitsMasked hand provisional: sets or clears bytes by comparing old and new flag bits [from GG1 STAGE1 0x0608c7a0]
+0x0609c148 func math_AngleFold hand provisional: abs angle folded around constant for table lookup [from GG1 STAGE1 0x0608c950]
+0x0609c18c func math_CosLookupLerp hand linear table interpolation using constant minus input [from GG1 STAGE1 0x0608c994]
+0x0609c192 func math_SinLookupLerp hand linear table interpolation of 16-bit table by input high half [from GG1 STAGE1 0x0608c99a]
+0x0609c6dc func vdp2_WriteColorRam hand provisional: writes color entries mode-dependent 32 or 16 bit at bank*0x400 or 0x200 [from GG1 STAGE1 0x0608cee4]
+0x0609c77c func vdp2_ReadModeBits hand provisional: returns register bit field selected by flag value [fuzzy 0.96 STAGE1 0x0608cf84] [from GG1 GSTART 0x0601c8b4]
+0x0609f008 func vdp_GetModeThunk hand provisional returns shifted mode value [x PROG4 0x060156d0]
+0x0609f01e func stub_0603ac8c hand provisional: calls function pointer from DAT, thin wrapper [fuzzy 0.92 STAGE1 0x0603ac8c] [from GG1 GSTART 0x0600e800]
+0x0609f040 func console_InitState hand provisional [from GG1 STAGE2 0x060879b4, sim 0.91]
+0x0609f208 func snd_CopyStateB hand provisional copies state block
+0x0609f97a func timer_CheckCount hand sets flag when counter reaches limit [from GG1 STAGE1 0x0608951c]
+0x0609f992 func timer_CheckFlagBit hand sets state 2 if pointed byte has bit 0x20 [from GG1 STAGE1 0x06089534]
+0x0609f9e0 func mem_CopyEveryOtherByte hand copies bytes stride 2 until limit [from GG1 STAGE1 0x06089580]
+0x0609fa16 func console_CopyColumn hand provisional: copies column of bytes into console buffer rows [from GG1 STAGE1 0x060895b6]
+0x0609fa5e func console_Reset hand provisional: sets init flag and zeroes console cursor variables [from GG1 STAGE1 0x06089602]
+0x0609fab2 func console_PollInput hand provisional reads SMPC-area byte, sets state [x LOGO2 0x060541c6]
+0x0609fb78 func console_FlushLine hand provisional: writes chars while count remaining, advances cursor [fuzzy 0.93 STAGE1 0x060896fe] [from GG1 STAGE2 0x06088536]
+0x0609fbbc func console_PutChar hand writes character cell at cursor row column [from GG1 STAGE1 0x06089742]
+0x0609fbd6 func console_PutAttr hand writes attribute byte at cursor cell +1 [from GG1 STAGE1 0x06089760]
+0x0609fbf2 func console_UpdateCursor hand provisional: copies cursor state and runs line update twice [fuzzy 0.95 STAGE1 0x06089780] [from GG1 STAGE2 0x060885b8]
+0x0609fc74 func console_UpdateLine hand provisional: interpolates between two cell positions with countdown [from GG1 STAGE1 0x060897c6]
+0x0609fe68 func math_StoreMulResultB hand provisional stores MACH MACL
+0x0609fe70 func nop_Stub_9fe70 hand provisional empty function

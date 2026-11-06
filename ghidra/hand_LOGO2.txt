@@ -1,0 +1,95 @@
+0x06010000 func sys_FrameSync hand provisional [from GG1 STAGE1 0x060159ba, sim 0.94]
+0x06010024 func logo_InitBiosVectors hand provisional calls vector table fns 0x40,0x41
+0x06010080 func logo_InitVideoState hand provisional large video init
+0x06010578 func logo_ResetFixedVars hand provisional sets fixed vars
+0x060105ba func stub_0603ac8c hand provisional: calls function pointer from DAT, thin wrapper [fuzzy 0.92 STAGE1 0x0603ac8c] [from GG1 GSTART 0x0600e800]
+0x06010610 func logo_SetupDisplay hand provisional large display setup, calls vdp2_SetDisplayModeBits
+0x06010b1c func logo_ClearState hand provisional clears state vars
+0x06010b86 func logo_LoadGfxBlockA hand provisional copies gfx to VDP2 via mem_CopyWords16
+0x06010cba func logo_LoadPaletteA hand provisional copies palette words
+0x06010db8 func logo_ResetCounters hand provisional resets counters
+0x06010e56 func logo_DecompressToVram hand provisional decompress call to VDP1 VRAM
+0x06010ef8 func logo_SetupVdp2Pages hand provisional sets VDP2 page pointers
+0x06010ff4 func math_FixedMulSigned hand provisional fixed mul with sign handling
+0x06011070 func math_FixedMulSigned2 hand provisional fixed mul via helper
+0x06011138 func logo_WaitLoop hand provisional loops on helper until done
+0x06011180 func logo_InitFadeVars hand provisional sets fixed-point fade vars
+0x06011210 func logo_UpdateFade hand provisional fade update using fixed mul
+0x060115ce func logo_MainSequence hand provisional main logo sequence stepper
+0x06011c00 func const_StoreDoubleTenth hand provisional stores double constant 0.1
+0x06011c0c func logo_ClearScuBits hand provisional clears SCU register bits
+0x06011cb6 func logo_ClearReg0080 hand provisional clears register then calls handler
+0x06011ce0 func logo_SetTableEntry hand provisional stores value in indexed table
+0x06011d22 func logo_BiosCallA hand provisional BIOS vector call wrapper
+0x06011dde func logo_BiosCallB hand provisional BIOS vector call wrapper
+0x06011e36 func mem_CopyWords16 hand provisional copies halfwords, count is third parameter shifted right one [fuzzy 1.00 STAGE1 0x0601540e] [from GG1 GSTART 0x0601912c]
+0x06011e54 func gfx_SetupBlockCopy hand provisional sets up block copy by param
+0x06011fc8 func gfx_CopyBlockBits hand provisional copies bits based on mask
+0x060120ec func logo_UpdateScrollLarge hand provisional large scroll update
+0x060128ac func vdp2_SetDisplayModeBits hand provisional [from GG1 GSTART 0x06017750, sim 0.92]
+0x06012a5e func logo_ProcessCmdBytes hand provisional processes command byte stream
+0x060133b0 func logo_RunCommandQueue hand provisional large command queue runner
+0x0601383e func logo_QueueCommand hand provisional validates and queues command
+0x06013ae4 func logo_EnqueueWord hand provisional enqueues word
+0x06013b6a func logo_SetPendingFlag hand provisional sets pending flag
+0x06013bc0 func logo_AdvanceQueue hand provisional advances queue pointers
+0x06013c66 func logo_ServiceQueue hand provisional services queue
+0x06013cd8 func logo_CallCdHandler hand provisional calls cd handler pointer
+0x06013d5a func logo_CheckState1 hand provisional checks state flag
+0x06013e90 func logo_ResetCdState hand provisional resets state with interrupts masked
+0x06013fc8 func logo_WriteVdpRegs hand provisional writes VDP registers
+0x06014046 func logo_StoreParams hand provisional stores params to globals
+0x06014128 func logo_ClearCdFlag hand provisional clears flag with interrupts masked
+0x0601416a func cd_WrapperEf30 hand provisional returns result of FUN_0608ef30 [r2 rep STAGE3 0x0608eef2] [from GG1 STAGE3 0x0608eef2]
+0x060141a0 func logo_CopyWithMask hand provisional copies words with mask via mem_CopyWords16
+0x060142cc func cd_ReadSectorsLike hand provisional large cd/sector routine
+0x060144b4 func cd_StartTransfer hand provisional starts transfer with interrupts masked
+0x0601463c func cd_PollTransfer hand provisional polls transfer returns 64-bit
+0x060148a4 func cd_ReadRegBlock hand provisional reads register block
+0x06014a44 func cd_CheckStatusBit hand provisional checks status bit
+0x06014ac2 func cd_ReadRegMasked hand provisional reads register and mask
+0x06014d28 func logo_FillBuffer hand provisional fills buffer with spaces
+0x06014dbc func math_DivStepSigned hand provisional: SH-2 DIV1 step sequence unrolled, signed 32-bit division helper [from GG1 STAGE1 0x06043440]
+0x06014e70 func math_DivStep64by32 hand provisional: SH-2 DIV1 step chain long division, divisor r0, dividend r1 quotient [from GG1 STAGE1 0x0604359c]
+0x06014f38 func memmove hand copies bytes handling overlap, forward path when dest below src [from GG1 STAGE1 0x06047448]
+0x0601503e func fp_DoubleAddCore hand provisional: soft-float double add core entry, aligns mantissas by exponent difference [from GG1 STAGE1 0x06043a3a]
+0x0601504c func fp_DoubleAdd hand provisional: soft-float double add, orders operands by magnitude, shifts mantissas [fuzzy 1.00 STAGE1 0x06043a48] [from GG1 STAGE2 0x06042880]
+0x0601524e func fp_DoubleAddSwapArgs hand provisional tail wrapper calls fp_DoubleAddCore with operand pairs swapped [fuzzy 0.93 STAGE1 0x06043c4a] [from GG1 STAGE2 0x06042a82]
+0x06015398 func fp_DoubleMul hand provisional: soft-float double multiply, exponent sum, handles inf/zero, sign xor [from GG1 STAGE1 0x06044000]
+0x0601550c func fp_DoubleToInt hand provisional: double to integer conversion, exponent range check, mantissa shift [from GG1 STAGE1 0x06044174]
+0x06015598 func fp_IntToFloat hand provisional: signed int to single float, normalizes by shifting left [from GG1 STAGE1 0x06044200]
+0x0601567e func fp_DoubleSetInfResult hand provisional: stores infinity exponent 0x7ff with sign, mantissa zero [from GG1 STAGE1 0x0604433e]
+0x06015686 func fp_DoubleSetNanResult hand provisional: stores NaN-like exponent 0x7ff result [from GG1 STAGE1 0x06044346]
+0x06015690 func fp_DoubleDiv hand provisional: soft-float double divide, special cases inf/zero via set-result stubs [fuzzy 0.99 STAGE1 0x06044350] [from GG1 STAGE2 0x06043188]
+0x0601585c func logo_ClearScratch hand provisional clears scratch memory
+0x060158a0 func cache_PurgeRange hand provisional purges cache lines for range
+0x06015992 func scu_ClearReg hand provisional clears SCU register
+0x06015ab0 func logo_WaitLoopB hand provisional loops on state var
+0x06015b20 func fp_DoubleToFixedA hand provisional converts via div
+0x06015b90 func fp_DoubleToFixedB hand provisional converts via div
+0x06015c02 func math_FixedMulSigned3 hand provisional fixed mul with sign handling
+0x06015c88 func math_DivStepUnsigned hand provisional: SH-2 DIV1 step sequence unrolled, unsigned division helper [from GG1 STAGE1 0x060434f4]
+0x06015d50 func math_ShiftDispatch_3 hand provisional: variable shift via byte offset jump table [from GG1 STAGE1 0x06047cf0]
+0x06052ce0 func math_CosLookupShift hand provisional cosine lookup shifted
+0x06052d06 func math_SinLookupShift hand provisional sine lookup shifted
+0x06052d34 func math_AngleFoldA hand provisional angle fold step
+0x06052d38 func math_AngleFoldB hand provisional angle fold
+0x06053590 func math_FixedMul hand 16.16 fixed multiply via 64-bit product shifted 16 [from GG1 STAGE1 0x060899fc]
+0x060535a4 func math_StoreFixedSplit hand provisional: stores value and splits fixed into high and low halves [from GG1 STAGE1 0x06089a10]
+0x060535b8 func math_CosLookupLerp hand linear table interpolation using constant minus input [from GG1 STAGE1 0x0608c994]
+0x060535be func math_SinLookupLerp hand linear table interpolation of 16-bit table by input high half [from GG1 STAGE1 0x0608c99a]
+0x06053754 func console_InitState hand provisional [from GG1 STAGE2 0x060879b4, sim 0.91]
+0x0605391c func console_CopyLineState hand provisional copies console state block
+0x0605408e func timer_CheckCount hand sets flag when counter reaches limit [from GG1 STAGE1 0x0608951c]
+0x060540a6 func timer_CheckFlagBit hand sets state 2 if pointed byte has bit 0x20 [from GG1 STAGE1 0x06089534]
+0x060540f4 func mem_CopyEveryOtherByte hand copies bytes stride 2 until limit [from GG1 STAGE1 0x06089580]
+0x0605412a func console_CopyColumn hand provisional: copies column of bytes into console buffer rows [from GG1 STAGE1 0x060895b6]
+0x06054172 func console_Reset hand provisional: sets init flag and zeroes console cursor variables [from GG1 STAGE1 0x06089602]
+0x060541c6 func console_PollInput hand provisional reads SMPC-area byte, sets state
+0x0605428c func console_FlushLine hand provisional: writes chars while count remaining, advances cursor [fuzzy 0.93 STAGE1 0x060896fe] [from GG1 STAGE2 0x06088536]
+0x060542d0 func console_PutChar hand writes character cell at cursor row column [from GG1 STAGE1 0x06089742]
+0x060542ea func console_PutAttr hand writes attribute byte at cursor cell +1 [from GG1 STAGE1 0x06089760]
+0x06054306 func console_UpdateCursor hand provisional: copies cursor state and runs line update twice [fuzzy 0.95 STAGE1 0x06089780] [from GG1 STAGE2 0x060885b8]
+0x06054388 func console_UpdateLine hand provisional: interpolates between two cell positions with countdown [from GG1 STAGE1 0x060897c6]
+0x0605457c func math_StoreMulResult hand provisional stores MACH MACL
+0x06054584 func nop_Stub_54584 hand provisional empty function

@@ -1,0 +1,56 @@
+0x0600e800 func prog1_Entry hand provisional entry stub: sets stack, calls init helper with config ptr then returns 0xf0
+0x0600eca8 func regtable_WriteShortPairs hand provisional writes (offset,value) short pairs from table into register block, count first
+0x0600ece4 func dma_RequestCopyWords hand provisional stores src and starts DMA copy of len/4 words
+0x0600ed0c func dma_WaitIdle hand provisional spins until busy bit 0x20 clears
+0x0600ed1a func dma_SaveReturnReg hand provisional stores PR into DMA block (odd stub)
+0x0600f278 func boot_InitCdAndSaveData hand provisional uses GGRIFFON__1 save name; CD init, read sectors via BIOS, selects next program
+0x0600f58c func lzss_Decompress hand provisional LZSS decoder with 0x1000 ring buffer filled with 0x20
+0x06010624 func pad_ReadAndMapKeys hand provisional reads peripheral and maps two ports through key table
+0x06010654 func pad_TranslateKeyCodes hand provisional swaps double buffers and matches key code table
+0x06010794 func font_DrawWideString hand provisional draws 16-bit char string until 0, newline handling
+0x060107f6 func font_DrawGlyphRows16 hand provisional blits 16-row glyph into 512-byte stride buffer
+0x0601087e func font_SelectGlyphBank hand provisional picks glyph table by code range and decodes bit offset
+0x060108ec func font_InitLineBuffers hand provisional fills two line buffers with background byte
+0x06010926 func font_ExpandBitsToPixels hand provisional expands 2x32 bit planes to pixel bytes
+0x06010954 func font_CopyRow hand provisional copies a run of bytes
+0x06010966 func font_AdvanceCursorX hand provisional adds glyph width to cursor x
+0x06010978 func font_NewLine hand provisional resets x, advances y, flags overflow
+0x0601099e func font_DrawNarrowString hand provisional draws 8-bit char string, handles newline
+0x060109fe func font_DrawGlyphRows8 hand provisional blits 8-bit glyph rows via attribute table
+0x06042b60 func cd_Init hand provisional clears nesting, masks ints, calls BIOS CD init via 0x6000358, restores
+0x06042bd4 func int_MaskAllNested hand provisional saves SR mask, sets mask 0xf, nest counter, hooks CD vectors on first
+0x06042c28 func int_RestoreNested hand provisional decrements counter, unhooks vectors at zero, restores SR mask
+0x06042c74 func int_HookCdVectors hand provisional saves vectors 0x6000340/344 and installs dummy handler
+0x06042cb0 func int_UnhookCdVectors hand provisional restores saved vectors
+0x06042ce8 func cd_CheckStatusOk hand provisional calls cd_BiosCall_0c(2,0) and returns status != 1
+0x06042d28 func cd_BiosCall_04 hand provisional wraps BIOS CD vtable slot 0x04 with int mask
+0x06042d9c func cd_BiosCall_08 hand provisional wraps BIOS CD vtable slot 0x08
+0x06042dec func cd_BiosCall_0c hand provisional wraps BIOS CD vtable slot 0x0c (3 args), used for status/get
+0x06042e48 func cd_BiosCall_10 hand provisional wraps BIOS CD vtable slot 0x10 (4 args)
+0x06042ec4 func cd_BiosCall_14 hand provisional wraps BIOS CD vtable slot 0x14 (3 args)
+0x06042f20 func cd_BiosCall_18 hand provisional wraps BIOS CD vtable slot 0x18
+0x06042f78 func cd_BiosCall_1c hand provisional wraps BIOS CD vtable slot 0x1c (4 args), file read
+0x06042ff4 func cd_BiosCall_20 hand provisional wraps BIOS CD vtable slot 0x20
+0x06043050 func cd_BiosCall_24_FixName hand provisional calls vtable 0x24 then patches 12/space name bytes
+0x060430c4 func cd_BiosCall_28 hand provisional calls vtable slot 0x28 directly
+0x060430f8 func sr_GetIntMask hand provisional reads SR and returns mask field
+0x06043130 func sr_SetIntMask hand provisional writes interrupt mask field into SR
+0x0604317c func sr_NopStub hand provisional empty return stub
+0x0604318c func sr_Read hand provisional returns SR
+0x060431a8 func smpc_PeriphInit hand provisional resets peripheral state, programs SMPC regs, 5 params
+0x06043550 func smpc_PeriphPoll hand provisional per-frame peripheral read from SMPC SR/IREG, fills out buffers
+0x060441f0 func smpc_PeriphFlagIfFull hand provisional sets state 1 when counter reaches limit
+0x0604421c func timer_CheckFlagBit hand provisional [from GG1 STAGE1 0x06089534, sim 0.92]
+0x06044258 func smpc_PeriphCopyBytes hand provisional copies every other byte into buffer up to limit
+0x060442d0 func smpc_PeriphCopyFrame hand provisional copies a frame of bytes into table row
+0x06044354 func smpc_PeriphResetState hand provisional zeroes all peripheral state variables
+0x06044414 func smpc_PeriphIssueCommand hand provisional writes IREG0-2 and COMREG 0x10 when idle
+0x060444a0 func smpc_PeriphFillRequests hand provisional loops writing request bytes into table
+0x06044520 func console_PutChar hand writes character cell at cursor row column [from GG1 STAGE1 0x06089742]
+0x0604455c func console_PutAttr hand writes attribute byte at cursor cell +1 [from GG1 STAGE1 0x06089760]
+0x0604459c func smpc_PeriphProcessFrame hand provisional packs state and runs decoder twice
+0x06044618 func smpc_PeriphDecodeData hand provisional large decoder of peripheral data stream
+0x06044a04 func sr_GetIntMask_b hand provisional second copy of sr_GetIntMask
+0x06044a3c func sr_SetIntMask_b hand provisional second copy of sr_SetIntMask
+0x06044a88 func sr_NopStub_b hand provisional second copy of empty stub
+0x06044a98 func sr_Read_b hand provisional second copy of SR read

@@ -1,0 +1,156 @@
+0x06010000 func prog4_Entry hand provisional calls sys_Init
+0x0601027a func math_ShiftRight12 hand provisional returns r0 >> 12
+0x06010282 func math_ShiftRight8 hand provisional returns r0 >> 8
+0x06010608 func hw_Divide32A hand provisional sets hardware divider operands
+0x06010d48 func hw_Divide32B hand provisional sets hardware divider operands
+0x06010d64 func table_SetEntry hand provisional stores value at indexed table slot
+0x06010d84 func table_GetEntry hand provisional reads indexed table slot
+0x06010d9c func math_FixedRecip hand provisional fixed-point reciprocal via divider
+0x06010dee func math_FixedDivideSigned hand provisional signed fixed-point divide
+0x06010ed4 func geom_TransformVector hand provisional transforms vector with matrix
+0x060110b8 func geom_InterpolateEdge hand provisional interpolates one edge to clip plane
+0x0601118c func geom_InterpolateEdgeUV hand provisional interpolates edge with texture coords
+0x060112c6 func geom_ClipSpanA hand provisional clips span against plane
+0x06011372 func geom_ClipSpanB hand provisional clips span with extra attributes
+0x0601144a func geom_ClipPolyWrapA hand provisional clip wrapper
+0x06011490 func geom_ClipPolyWrapB hand provisional clip wrapper
+0x06011506 func geom_ClipPolyWrapC hand provisional clip wrapper
+0x0601155e func geom_ClipPolyWrapD hand provisional clip wrapper
+0x06011606 func geom_CheckClipCode hand provisional checks clip codes of two vertices
+0x0601161c func geom_CheckVertexLimit hand provisional checks vertex limit
+0x06011662 func geom_ClipEdgeA hand provisional clips polygon edge case A
+0x0601177c func geom_ClipEdgeB hand provisional clips polygon edge case B
+0x0601187a func geom_ClipEdgeC hand provisional clips polygon edge case C
+0x06011992 func geom_ClipEdgeD hand provisional clips polygon edge case D
+0x06011b38 func math_FixedFromInt hand provisional shifts int to 16.16
+0x06011b40 func math_FixedToInt hand provisional shifts 16.16 to int
+0x06011b88 func math_FixedAbs hand provisional absolute value with sign handling
+0x06011da4 func math_Atan2Fixed hand provisional arctangent via lookup table
+0x0601215c func vdp_InitAll hand provisional initializes VDP state and registers
+0x06012350 func vdp_ScrollStepA hand provisional scroll update step A
+0x06012462 func vdp_ScrollStepB hand provisional scroll update step B
+0x060125b6 func vdp_ComputeScrollOffset hand provisional computes scroll offset
+0x060126e8 func vdp2_CopyPendingBlock hand provisional copies pending block to VDP2
+0x0601285e func mem_CopyShortsGuarded hand provisional copies shorts with null checks
+0x06012882 func vdp_ReadRegMasked hand provisional reads register with mask
+0x060128e4 func vdp_UpdateFlags hand provisional updates display flags
+0x06012ba0 func vdp_SetPlaneParams hand provisional sets plane parameters
+0x06012d5c func vdp_SetPlaneRegsA hand provisional sets plane registers
+0x06012dbc func vdp_SetPlaneRegsB hand provisional sets plane registers
+0x06012f4c func vdp_GetPlaneParam hand provisional reads plane parameter by id
+0x06013090 func vdp_BuildDisplayList hand provisional builds display list
+0x060134d0 func struct_ClearMedium hand provisional clears small struct
+0x06013504 func vdp_DrawTileMap hand provisional large tilemap draw routine
+0x06013e48 func vdp_ClearRegion hand provisional clears VDP region
+0x06013e74 func vdp_SetupLayer hand provisional configures a layer
+0x06014018 func vdp1_SetFbcr hand provisional writes VDP1 FBCR
+0x060140c8 func vdp1_InitState hand provisional initializes VDP1 state vars
+0x06014124 func vdp1_CheckBusy hand provisional checks VDP1 busy flag
+0x06014152 func vdp1_WaitDrawEnd hand provisional waits VDP1 draw end
+0x060142a4 func vdp1_Reset hand provisional resets VDP1 with interrupts masked
+0x06014338 func vdp1_SetModes hand provisional sets VDP1 TVMR/FBCR modes
+0x0601442e func vdp1_SetClipRect hand provisional sets clip rectangle
+0x06014520 func vdp1_BuildCommandTable hand provisional builds command table
+0x06014714 func vdp1_SetFbcrWrap hand provisional wrapper to vdp1_SetFbcr
+0x0601471c func vdp1_SetClipFromSize hand provisional sets clip rect from size
+0x06014768 func vdp1_UploadDataCopy hand provisional copies data via DMA and waits
+0x0601478a func vdp1_SetObjectRect hand provisional sets object rect and area
+0x06014856 func vdp1_FreeSlot hand provisional frees command slot
+0x0601489a func vdp1_CountUsedSlots hand provisional counts used slots
+0x060149bc func vdp1_BeginList hand provisional starts a command list
+0x06014a64 func vdp1_EndListWait hand provisional ends list and waits
+0x06014b7a func vdp1_EndListThunk hand provisional thunk to vdp1_FlushCmdTable
+0x06014bc8 func vdp1_AddCmdPoint hand provisional adds point command
+0x06014c04 func vdp1_AddCmdUserClip hand provisional adds user clip command
+0x06014c3c func vdp1_AddCmdSysClip hand provisional adds system clip command
+0x06014c78 func vdp1_AddCmdNormalSprite hand provisional adds normal sprite command
+0x06014d20 func vdp1_AddCmdScaledSprite hand provisional adds scaled sprite command
+0x06014d98 func vdp1_AddCmdDistortedSprite hand provisional adds distorted sprite command
+0x06014e30 func vdp1_AddCmdPolygon hand provisional adds polygon command
+0x06014f0c func vdp1_AddCmdPolyline hand provisional adds polyline command
+0x06015014 func vdp1_AddCmdLine hand provisional adds line command
+0x060150d6 func vdp1_AddCmdLocalCoord hand provisional adds local coordinate command
+0x06015102 func vdp1_AllocCmdChain hand provisional allocates command chain
+0x060151b2 func vdp1_LinkCmdChain hand provisional links command chain
+0x060152a4 func vdp1_FlushCmdTable hand provisional flushes command table to VRAM
+0x0601549a func dma_CopyWithIrqMask hand provisional copies with interrupts masked
+0x060155ba func dma_WaitDone hand provisional waits for DMA done
+0x06015694 func vdp_InitRegsAll hand provisional calls VDP2 register init set
+0x060156d0 func vdp_GetModeThunk hand provisional returns shifted mode value
+0x060156ee func vdp2_SetScrollRegs hand provisional sets scroll registers
+0x06015a70 func vdp2_UpdateAllLayers hand provisional updates all layers
+0x06015f18 func vdp2_SetLayerPos hand provisional sets layer position
+0x06015f88 func vdp2_InitRegsA hand provisional initializes VDP2 regs group A
+0x060162cc func vdp2_InitRegsB hand provisional initializes VDP2 regs group B
+0x0601633c func vdp2_InitRegsC hand provisional initializes VDP2 regs group C
+0x06016420 func vdp2_InitRegsD hand provisional initializes VDP2 regs group D
+0x06016484 func vdp2_InitRegsE hand provisional initializes VDP2 regs group E
+0x0601670c func fixed_AngleFromDivA hand provisional angle from divider result
+0x0601677c func fixed_AngleFromDivB hand provisional angle from divider result
+0x06016bb6 func anim_ExecScript hand provisional large animation script interpreter
+0x06017776 func vdp_PollTransferA hand provisional polls transfer state A
+0x060178ea func vdp_PollTransferB hand provisional polls transfer state B
+0x06017a90 func scu_DmaInit hand provisional initializes SCU DMA state
+0x06017b54 func scu_DmaStart hand provisional sets DMA address and starts
+0x06017b64 func scu_DmaWait hand provisional waits for DMA done
+0x06017bd2 func mem_CopyShortsN hand provisional copies shorts count
+0x06017be4 func vdp1_GetCmdSlot hand provisional returns command slot pointer
+0x06017c30 func vdp1_ClipAndAddCmd hand provisional clips and adds command
+0x06017e5e func scu_DmaEnableBits hand provisional sets DMA enable bits
+0x06017e86 func cache_PurgeRange hand provisional purges cache lines for range
+0x06017eb4 func scu_DmaSetupChannel hand provisional writes SCU DMA channel regs
+0x06017f08 func scu_DmaStartChecked hand provisional starts DMA with interrupts masked
+0x06017fb4 func scu_ReadDmaStatus hand provisional reads DMA status
+0x060181f8 func vdp_GetPlaneParamB hand provisional reads plane parameter by id
+0x060182b0 func sys_Init hand provisional clears bss, resets and sets state
+0x06018300 func sys_ClearBss hand provisional clears bss range
+0x060183dc func sys_Reboot hand provisional resets and restarts
+0x06018444 func sys_ResetState hand provisional resets system state
+0x0601853c func sys_ShutdownState hand provisional shuts down state
+0x06018580 func sys_ReadTimerCount hand provisional reads timer count
+0x060185ba func sys_SetFlagMode hand provisional sets flag mode variable
+0x060185d8 func sys_SetVector hand provisional stores vector table entry
+0x060186de func sys_EnableVblank hand provisional enables vblank interrupt
+0x06018714 func res_ParseTable hand provisional parses resource table
+0x0601880c func bytes_ReadBe32 hand provisional reads big-endian 32-bit from bytes
+0x0601883e func mem_ReadU16 hand provisional reads halfword
+0x0601884e func vdp1_EndFrame hand provisional checks busy then updates
+0x0601885a func vdp1_WaitDrawEndThunk hand provisional thunk to vdp1_WaitDrawEnd
+0x06018860 func vdp2_WriteLayerRegs hand provisional writes layer registers
+0x0601892e func mem_CopyShortsThunk hand provisional thunk to mem_CopyShortsCount
+0x06018938 func mem_CopyShortsCount hand provisional copies shorts with counter
+0x06018942 func res_FindEntryByIndex hand provisional finds entry by index
+0x0601898c func gfx_UploadPaletteEntry hand provisional uploads palette entry
+0x06018a28 func obj_ClearSlot hand provisional clears object slot
+0x06018ac4 func obj_ClearAll hand provisional clears all object slots
+0x06018be8 func obj_SpawnA hand provisional spawns object variant A
+0x06018e50 func obj_SpawnB hand provisional spawns object variant B
+0x06019078 func obj_SpawnC hand provisional spawns object variant C
+0x06019288 func obj_SetState hand provisional sets object state
+0x06019570 func obj_SetFlags hand provisional sets object flags
+0x060195ec func obj_SetSpriteParams hand provisional sets sprite parameters
+0x060196e8 func res_LoadFrameSet hand provisional loads frame set
+0x060197f4 func res_LoadFrameSetB hand provisional loads frame set variant
+0x060198c8 func res_LoadAnimData hand provisional loads animation data
+0x06019978 func res_LoadAnimDataB hand provisional loads animation data variant
+0x06019a24 func obj_GetAnimState hand provisional reads animation state
+0x06019b58 func obj_GetAnimStateB hand provisional reads animation state variant
+0x06019ee6 func fixed_SignOrFoldA hand provisional returns sign constant or folded value
+0x06019f0e func fixed_SignOrFoldB hand provisional returns sign constant or folded value
+0x06019f7a func vdp_UpdatePlaneParams hand provisional updates plane parameters
+0x0601a1e8 func obj_UpdateAnim hand provisional large object animation update
+0x0601ab70 func game_MainFrameUpdate hand provisional large per-frame update
+0x0601b974 func mem_ClearBlockAtVram hand provisional clears block
+0x0601b9b8 func res_LoadToBlock hand provisional loads resource to block
+0x0601ba3c func res_ValidateHeader hand provisional validates resource header
+0x0601bb46 func obj_DrawFrame hand provisional draws object frame
+0x0601bc72 func obj_FreeBlock hand provisional frees block
+0x0601bca8 func fade_AdvanceTimer hand provisional advances timer and fires event 4
+0x0601bcec func scene_StepA hand provisional scene step A
+0x0601be74 func scene_StepB hand provisional scene step B
+0x0601bfac func scene_StepC hand provisional scene step C
+0x0601c120 func scene_InitD hand provisional scene init D
+0x0601c25c func scene_StepE hand provisional scene step E
+0x0601c3bc func scene_StepF hand provisional scene step F
+0x0601c49e func scene_TickG hand provisional scene tick G
+0x0601c544 func scene_StepH hand provisional scene step H

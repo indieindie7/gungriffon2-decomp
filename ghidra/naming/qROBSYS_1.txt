@@ -1,0 +1,408 @@
+0x0600e800 func robsys_Entry hand provisional sets reg, calls init
+0x0600ec0c func game_FrameUpdateMain hand provisional large per-frame update
+0x0600f98a func game_FrameUpdateB hand provisional per-frame update part B
+0x06010238 func sys_CriticalCallA hand provisional masks irq, calls bios vector 3
+0x06010320 func sys_CriticalCallB hand provisional masks irq, calls bios vector 3
+0x060103d8 func game_InstallCallbacks hand provisional installs callbacks
+0x06010442 func pad_ReadBitsA hand provisional reads bits from pad word
+0x06010508 func pad_ReadBitsB hand provisional reads bits from pad word
+0x060105b4 func game_ResetGlobals hand provisional resets global state vars
+0x060107c0 func pad_GetBitByPlayer hand provisional pad flag lookup by player
+0x060107ea func pad_GetByteByPlayer hand provisional pad byte by player index
+0x060107fe func pad_TestBit2 hand provisional tests bit 2 of pad flags
+0x06010858 func pad_PlayerActive hand provisional checks player active
+0x06010894 func pad_ReadByte36 hand provisional reads pad byte
+0x0601089c func pad_ReadByte35 hand provisional reads pad byte
+0x060108a4 func pad_TestBit4 hand provisional tests bit 4 of pad flags
+0x060108c0 func pad_SetBit10 hand provisional sets bit 0x10 of pad flags
+0x060108ca func pad_UpdateAll hand provisional updates pad state for all
+0x06010a54 func pad_GetByte2e hand provisional pad byte by player index
+0x06010a68 func game_GetModeBelow8 hand provisional mode check below 8
+0x06010a92 func pad_ReadByte37 hand provisional reads pad byte
+0x06010ad8 func rand_HashA hand provisional hash from param
+0x06010b0a func rand_HashB hand provisional hash of seed
+0x06010b34 func rand_HashC hand provisional hash of table entry for current player
+0x06010b64 func rand_ResetTable hand provisional resets random table
+0x06010b84 func game_ResetPlayerTables hand provisional resets player tables
+0x06010bce func game_AddToCounter hand provisional adds to global counter
+0x06010cb0 func game_GetStageMode hand provisional returns stage mode, 2 special
+0x06010d04 func game_JumpByStageMode hand provisional jump on stage mode
+0x06010d28 func sys_JumpTableA hand provisional indirect jump stub
+0x06010d30 func sys_JumpTableB hand provisional indirect jump stub
+0x06010d38 func sys_JumpTableC hand provisional indirect jump stub
+0x06010d40 func sys_JumpTableD hand provisional indirect jump stub
+0x0601375c func vdp_UpdateRegsFrame hand provisional updates VDP2 registers per frame
+0x06013b40 func vdp_SetupFrameA hand provisional sets frame state and VDP regs
+0x06013c98 func game_GetFlagByte hand provisional returns flag byte state
+0x06013cc4 func game_StartStage hand provisional starts stage, calls setup fns
+0x06013e60 func game_CheckStageMode hand provisional checks stage mode then calls fn
+0x06013e98 func sys_SetVdp1Param hand provisional calls bios fn with param
+0x06013ed8 func sys_CheckBiosResult hand provisional checks bios result 6
+0x06013ef4 func game_CallWithStagePlus1 hand provisional calls fn with stage+1
+0x06013f00 func game_ScanTable hand provisional scans table
+0x06013fa6 func game_ClearShortTable hand provisional clears short table
+0x06013fe0 func game_SendCommandIfIdle hand provisional sends command 0xd if idle
+0x0601405c func sys_WaitReg hand provisional waits for register bits, loops 11
+0x06014082 func game_InitPlayerFlags hand provisional inits player flags
+0x060140e8 func game_GetStageFlagByte hand provisional stage flag byte lookup
+0x060141c0 func game_StageSetup hand provisional large stage setup
+0x06014f2c func obj_CopyEntry hand provisional copies entry between tables
+0x06015428 func vdp_UploadBlockWrap hand provisional uploads block via helper
+0x0601551c func game_InitBuffers hand provisional initializes buffers
+0x060156f4 func game_InitTimers hand provisional initializes timers
+0x060159e4 func game_PlayerInit hand provisional large player init
+0x06016286 func game_PlayerCheckState hand provisional player state check
+0x06016544 func game_PlayerStepA hand provisional player step A
+0x060166fc func game_ModeCheckA hand provisional stage mode checks A
+0x060169ee func game_ModeCheckB hand provisional stage mode checks B
+0x06016c48 func game_ModeCheckC hand provisional stage mode checks C
+0x06016e46 func game_ResetPlayerSlot hand provisional resets player slot
+0x06016f00 func game_ClampStatA hand provisional clamps player stat A
+0x06016f3a func game_ClampStatB hand provisional clamps player stat B
+0x06016f94 func game_ClampStatC hand provisional clamps player stat C
+0x06016fce func game_PlayerWeaponUpdate hand provisional large player/weapon update
+0x0601771a func game_PlayerCheckHit hand provisional player hit check
+0x0601791a func game_CheckPlayerActive hand provisional checks player active then branch
+0x06017964 func robot_UpdateA hand provisional large robot update A
+0x0601a220 func robot_PostUpdateA hand provisional post update A
+0x0601aaec func robot_UpdateB hand provisional large robot update B
+0x0601bb52 func robot_PostUpdateB hand provisional post update B
+0x0601c5f8 func robot_UpdateC hand provisional large robot update C
+0x0601d5d0 func robot_PostUpdateC hand provisional post update C
+0x0601de14 func robot_UpdateD hand provisional large robot update D
+0x0601fa50 func robot_PostUpdateD hand provisional post update D
+0x06020610 func robot_SetupDraw hand provisional robot draw setup
+0x0602092c func robot_StoreSlotPtr hand provisional stores slot pointer
+0x06020998 func robot_SelectTargets hand provisional selects target info
+0x06020a4c func robot_FindTarget hand provisional finds target slot
+0x06020aec func robot_ProcessSlots hand provisional large slot processing
+0x060211fe func robot_ClearSlot hand provisional clears slot
+0x0602125c func robot_SetupAttack hand provisional sets up attack data
+0x06021454 func hit_TestBoxA hand provisional tests hit box A
+0x06021664 func game_ProcessCollisions hand provisional processes collisions
+0x06021c2c func hit_TestShapeA hand provisional shape hit test A
+0x06022260 func hit_TestShapeB hand provisional shape hit test B
+0x060225e2 func hit_TestShapeC hand provisional shape hit test C
+0x06022960 func hit_TestBoxB hand provisional tests hit box B
+0x06022b70 func hit_TestShapeD hand provisional shape hit test D
+0x06022f04 func hit_TestBoxC hand provisional tests hit box C
+0x060230cc func hit_TestBoxD hand provisional tests hit box D
+0x06023294 func hit_TestBoxE hand provisional tests hit box E
+0x06023480 func hit_TestBoxF hand provisional tests hit box F
+0x0602383c func list_ProcessEntries hand provisional processes entry list
+0x060238c8 func hit_ResolveA hand provisional resolves hit A
+0x06023cca func hit_ResolveB hand provisional resolves hit B
+0x0602417c func hit_ApplyDamage hand provisional applies damage
+0x06024640 func obj_UpdateSlotA hand provisional updates slot A
+0x0602474c func obj_UpdateSlotB hand provisional updates slot B
+0x06024856 func game_SetFlagsFromTable hand provisional sets flags
+0x06024a30 func obj_ClampValue hand provisional clamps value to limit
+0x06024a90 func game_CallFnPtr hand provisional calls function pointer
+0x06024afc func math_AddWrapped hand provisional adds with table wrap
+0x06024b86 func game_CallCallbackPtr hand provisional calls callback
+0x06024c48 func game_CheckRangeAndCall hand provisional range check
+0x06024c9c func game_UpdateTable hand provisional updates table
+0x06024ee4 func game_ClearTableBytes hand provisional clears table bytes
+0x06024fa2 func game_TargetQuery hand provisional target query
+0x06025164 func robot_QuerySlotField hand provisional queries robot slot field
+0x060251e0 func game_InitSlotTables hand provisional inits slot tables
+0x0602553c func game_ProcessPlayerInputs hand provisional processes player inputs
+0x06025ae4 func game_GetActivePlayerPtr hand provisional returns pointer by active player
+0x06025bd0 func game_ComputeOffset hand provisional computes offset triple
+0x06025ede func game_UpdateTimerEntry hand provisional updates timer entry
+0x06026078 func robot_SetStateFlag hand provisional sets robot state flag
+0x060261de func game_ClearIfActive hand provisional clears flag if active player
+0x0602620e func game_ResetStageVars hand provisional resets stage vars
+0x0602645e func game_StepStageTimers hand provisional steps stage timers
+0x06026632 func game_ClampWithMode hand provisional clamps value by mode
+0x060266f0 func game_CallTargetQuery hand provisional calls target query
+0x060267bc func list_RelocateHead hand provisional relocates list head pointer
+0x060267f6 func game_FindFreeSlot hand provisional finds free slot from index 2
+0x0602682e func game_SwapShorts hand provisional swaps short pair
+0x060268c0 func game_InitTable hand provisional initializes table
+0x0602691a func list_RelocateWalk hand provisional relocates list 0x17 entries
+0x06026934 func game_SetSlotPair hand provisional sets slot pair
+0x06026aa2 func game_ClearPlayerVars hand provisional clears player vars
+0x06026ac2 func game_CheckSlotActive hand provisional checks slot active
+0x06026b68 func game_CheckStateByte hand provisional checks state byte 0..2
+0x06026bc8 func robot_SetupEntry hand provisional sets up robot entry
+0x06026d2c func game_InitStageTables hand provisional initializes stage tables
+0x0602702e func math_MinClamp hand provisional clamps by min of two
+0x0602708e func math_MinClamp2 hand provisional clamps by min of two
+0x060270ec func bullet_ClearPoolA hand provisional clears pool A
+0x06027122 func bullet_ClearPoolB hand provisional clears pool B
+0x0602715c func bullet_ClearPoolC hand provisional clears pool C
+0x06027180 func bullet_ResetCounter hand provisional resets counter
+0x060271d4 func bullet_SpawnA hand provisional spawns object A
+0x06027668 func bullet_SpawnB hand provisional spawns object B
+0x06027a3c func bullet_SpawnC hand provisional spawns object C
+0x06027cda func bullet_SpawnD hand provisional spawns object D
+0x06027e7e func bullet_SpawnE hand provisional spawns object E
+0x06027fd2 func bullet_UpdateA hand provisional large update A
+0x06028e1e func bullet_ClearPoolD hand provisional clears 0x50 entries
+0x06028e90 func bullet_UpdateB hand provisional update B
+0x06029486 func bullet_ApplyHash hand provisional hash for entry
+0x060294fa func bullet_UpdateAll hand provisional large update
+0x06029f62 func bullet_ApplyEffect hand provisional applies effect
+0x0602a11a func game_SetFlagPair hand provisional sets flag pair
+0x0602a1e4 func game_SetFlagPairB hand provisional sets flag pair
+0x0602a2c8 func effect_UpdateA hand provisional large effect update A
+0x0602aae0 func effect_UpdateB hand provisional large effect update B
+0x0602b27c func game_ScanList hand provisional scans list
+0x0602b3d0 func game_CheckList hand provisional checks list
+0x0602b466 func game_ClearList hand provisional clears list
+0x0602b4e4 func game_CallWrap hand provisional wrapper
+0x0602b52e func robot_ApplyHit hand provisional applies hit to robot
+0x0602b740 func game_CheckStageThree hand provisional checks stage 3
+0x0602b790 func ai_PickTargetA hand provisional picks target A
+0x0602ba4c func ai_PickTargetB hand provisional picks target B
+0x0602bd8e func ai_CheckLimit hand provisional checks limit
+0x0602bdfc func ai_PickTargetC hand provisional picks target C
+0x0602bfec func ai_PickTargetD hand provisional picks target D
+0x0602c178 func ai_Notify hand provisional notifies player
+0x0602c268 func ai_PickTargetE hand provisional picks target E
+0x0602c3cc func ai_UpdateAll hand provisional large AI update
+0x0602ce8e func ai_ClearEntries hand provisional clears 0x18 entries
+0x0602cee2 func ai_UpdateEntry hand provisional updates entry
+0x0602d492 func ai_ApplyHash hand provisional hash for entry
+0x0602d506 func ai_SetFlagPair hand provisional sets flag pair
+0x0602dfc4 func ai_BehaviorLarge hand provisional large behavior
+0x0602eafe func snd_Play8 hand provisional sound call wrapper A
+0x0602eb74 func snd_Play9 hand provisional sound call wrapper B
+0x0602ebec func snd_Play11 hand provisional sound call wrapper C
+0x0602ec6c func snd_PlayCheckedA hand provisional sound call checked A
+0x0602ecce func snd_PlayCheckedB hand provisional sound call checked B
+0x0602ed32 func snd_VoiceInitA hand provisional inits voice A
+0x0602ed78 func snd_VoiceInitB hand provisional inits voice B
+0x0602edd0 func snd_PlayAtPos hand provisional plays at position
+0x0602eeae func snd_VoiceQueryA hand provisional queries voice A
+0x0602ef40 func snd_PlayCheckedC hand provisional sound call checked C
+0x0602efa4 func snd_VoiceStop hand provisional stops voice
+0x0602effc func snd_PlayCheckedD hand provisional sound call checked D
+0x0602f05c func snd_VoiceQueryB hand provisional queries voice B
+0x0602f112 func snd_PlayFixed hand provisional plays fixed
+0x0602f18a func snd_VoiceQueryC hand provisional queries voice C
+0x0602f272 func snd_PlayRandom hand provisional plays random
+0x0602f354 func snd_VoiceSetup hand provisional voice setup
+0x0602f470 func snd_Mixer hand provisional large mixer
+0x0602fb44 func snd_UpdateEntry hand provisional updates entry
+0x0602fc00 func snd_UpdateChannels hand provisional updates channels
+0x0602fdd2 func snd_ServiceQueueA hand provisional services queue A
+0x0602ff48 func snd_ServiceQueueB hand provisional services queue B
+0x0602ffe8 func snd_ServiceQueueC hand provisional services queue C
+0x060303e0 func snd_ServiceQueueD hand provisional services queue D
+0x06030538 func snd_ServiceQueueE hand provisional services queue E
+0x0603096c func game_StepPlayerA hand provisional player step A
+0x06030b3c func game_ComputeDistance hand provisional computes distance
+0x06030e48 func game_StepPlayerB hand provisional player step B
+0x060312c8 func game_StepPlayerC hand provisional player step C
+0x06031a02 func game_StepPlayerD hand provisional large player step D
+0x06031f24 func game_StepPlayerE hand provisional player step E
+0x06032060 func game_StepPlayerF hand provisional player step F
+0x060322c0 func game_StepPlayerG hand provisional player step G
+0x0603249c func game_StepPlayerH hand provisional player step H
+0x0603262a func game_StepPlayerI hand provisional player step I
+0x06032a54 func game_StepPlayerJ hand provisional player step J
+0x06032d2e func game_StepPlayerK hand provisional player step K
+0x06032df2 func game_StepPlayerL hand provisional large player step L
+0x060336de func game_StepPlayerM hand provisional player step M
+0x060337ba func game_ReturnPtrA hand provisional returns pointer A
+0x06033872 func game_StepPlayerN hand provisional player step N
+0x06033998 func game_StepPlayerO hand provisional player step O
+0x06033a20 func game_ComputeLeadAngle hand provisional computes lead angle from stat table
+0x06033b7a func game_CheckLocalPlayer hand provisional checks local player slot
+0x06033bcc func game_StepPlayerP hand provisional player step P
+0x06033c94 func game_StepPlayerQ hand provisional player step Q
+0x06033fe8 func effect_SetEntry hand provisional sets effect entry
+0x06034252 func effect_SpawnA hand provisional spawns effect A
+0x06034388 func effect_SpawnB hand provisional spawns effect B
+0x060344c2 func vdp_UploadPlayerTiles hand provisional uploads two tile blocks
+0x06034514 func vdp_FillTileBlock hand provisional fills tile block
+0x060345aa func vdp_CopyPaletteBlock hand provisional copies palette block via copier
+0x060345f0 func hud_SetEntryA hand provisional sets hud entry A
+0x06034682 func hud_DrawGauge hand provisional draws gauge
+0x06034830 func hud_UpdateA hand provisional updates hud A
+0x06034904 func hud_ClearA hand provisional clears hud A
+0x06034986 func hud_UpdateB hand provisional updates hud B
+0x06034aa6 func hud_SetEntryB hand provisional sets hud entry B
+0x06034be4 func game_InitMatch hand provisional initializes match state
+0x06034eb0 func game_SetupPlayers hand provisional sets up players
+0x060350c6 func game_StoreWord hand provisional stores word to global
+0x0603566c func game_UpdateScores hand provisional updates scores
+0x06035930 func snd_PlayWrapPos hand provisional sound play with position
+0x0603597e func snd_ComputePan hand provisional computes pan from position
+0x06035a1c func math_FindHighBit hand provisional counts shift steps
+0x06035aac func sys_BiosVec0 hand provisional bios vector jump 0
+0x06035ab4 func sys_BiosVec1 hand provisional bios vector jump 1
+0x06035abc func sys_BiosVec2 hand provisional bios vector jump 2
+0x06035ac4 func sys_BiosVec3 hand provisional bios vector jump 3
+0x06035acc func snd_CallBiosParams hand provisional sound bios call with params
+0x06035b32 func sys_BiosVecParam hand provisional bios vector jump with param
+0x06035b40 func sys_BiosVec4 hand provisional bios vector jump 4
+0x06035b48 func sys_BiosVec5 hand provisional bios vector jump 5
+0x06035b50 func sys_BiosVec6 hand provisional bios vector jump 6
+0x06035b58 func game_SetModeIfEnabled hand provisional sets mode if enabled
+0x06035bb2 func game_ClearArrayA hand provisional clears array A
+0x06035bf4 func sys_CallBiosLoop hand provisional calls bios in loop
+0x06035c34 func sys_CallBiosParams hand provisional calls bios with params
+0x06035c80 func sys_CallBiosF hand provisional calls bios with 0xf
+0x06035c9c func sys_BiosVec7 hand provisional bios vector jump 7
+0x06035ca4 func sys_BiosVec8 hand provisional bios vector jump 8
+0x06035cac func game_FindSlotByKey hand provisional finds slot by key
+0x06035e4c func text_PutStringVdp2 hand provisional puts string to VDP2 cells
+0x06035e78 func game_InitSlotsB hand provisional initializes slots B
+0x06035f5a func game_InitSlotsC hand provisional initializes slots C
+0x06036238 func gfx3d_DrawModelA hand provisional 3D model draw A
+0x060367ea func gfx3d_DrawModelB hand provisional 3D model draw B
+0x0603736c func gfx3d_ProjectA hand provisional projects points A
+0x06037528 func gfx3d_TransformA hand provisional transform A
+0x06037674 func gfx3d_TransformB hand provisional transform B
+0x060377ec func gfx3d_TransformC hand provisional transform C
+0x06037a84 func gfx3d_ProjectB hand provisional projects points B
+0x06037c68 func gfx3d_TransformD hand provisional transform D
+0x06038178 func gfx3d_TransformE hand provisional transform E
+0x060387f4 func gfx3d_DrawListA hand provisional draws list A
+0x060389c4 func gfx3d_DrawListB hand provisional draws list B
+0x06038b28 func gfx3d_TransformF hand provisional transform F
+0x06038b9c func gfx3d_TransformG hand provisional transform G
+0x06038c70 func gfx3d_TransformH hand provisional transform H
+0x06038d28 func gfx3d_DrawModelC hand provisional 3D model draw C
+0x06039660 func gfx3d_DrawModelD hand provisional 3D model draw D
+0x06039b00 func gfx3d_DrawModelE hand provisional 3D model draw E
+0x0603a0b2 func gfx3d_DrawModelF hand provisional 3D model draw F
+0x0603ac44 func gfx3d_ProjectC hand provisional projects points C
+0x0603ae04 func gfx3d_TransformI hand provisional transform I
+0x0603af50 func gfx3d_TransformJ hand provisional transform J
+0x0603b0c8 func gfx3d_TransformK hand provisional transform K
+0x0603b360 func gfx3d_ProjectD hand provisional projects points D
+0x0603b544 func gfx3d_TransformL hand provisional transform L
+0x0603ba60 func gfx3d_DrawModelG hand provisional 3D model draw G
+0x0603c108 func gfx3d_DrawListC hand provisional draws list C
+0x0603c2e4 func gfx3d_DrawListD hand provisional draws list D
+0x0603c448 func gfx3d_SetEntry hand provisional sets 3D entry
+0x0603c5a0 func gfx3d_TransformObject hand provisional transforms object 436-byte struct
+0x0603c728 func gfx3d_SceneSetup hand provisional large scene setup
+0x0603d610 func gfx3d_Helper3d610 hand provisional 3D helper
+0x0603d730 func gfx3d_FindObject hand provisional finds object
+0x0603d7f4 func gfx3d_ObjectQuery hand provisional object query
+0x0603db14 func gfx3d_DrawModelH hand provisional 3D model draw H
+0x0603dd54 func timer_LoadA hand provisional loads timer A
+0x0603dda0 func timer_LoadB hand provisional loads timer B
+0x0603dde0 func timer_Copy hand provisional copies timer pair
+0x0603df9c func math_StoreMulResult hand provisional stores MACH MACL
+0x0603dfa8 func nop_Stub_3dfa8 hand provisional empty function
+0x0603dfb4 func hw_WriteRegBits hand provisional writes register bits
+0x0603dfe6 func hw_PollA hand provisional polls hardware A
+0x0603e338 func hw_PollB hand provisional polls hardware B
+0x0603e730 func hw_WdtReset hand provisional writes watchdog registers
+0x0603e790 func hw_StoreZero hand provisional writes zero to table
+0x0603eb84 func game_InitCounters hand provisional initializes counters
+0x0603ed70 func game_CopyByteA hand provisional copies byte A
+0x0603ed7a func game_CopyByteB hand provisional copies byte B
+0x0603ed86 func game_UpdateMainLarge hand provisional large update
+0x0603fb98 func game_ClearBlockA hand provisional clears block
+0x0603fc18 func game_UpdateAILarge hand provisional large AI/main update
+0x0604104c func game_ScanPlayers hand provisional scans players
+0x0604116e func game_ScanTableB hand provisional scans table
+0x06041208 func game_SaveStateA hand provisional saves state A
+0x06041262 func game_RestoreStateA hand provisional restores state A
+0x06041314 func game_StoreTable hand provisional stores table entry
+0x0604132a func game_SetFlagIfZero hand provisional sets flag
+0x0604140c func game_ResetPlayerFlags hand provisional resets player flags
+0x0604158e func vdp_ClearRegA hand provisional clears VDP2 reg A
+0x060415e2 func vdp_ClearRegB hand provisional clears VDP2 reg B
+0x0604163a func game_CheckDistance hand provisional checks distance
+0x060416c4 func game_ComputeRelativePos hand provisional computes relative position
+0x06041810 func game_StepPlayerR hand provisional player step R
+0x06041aea func game_StepPlayerS hand provisional player step S
+0x06041db6 func game_StepPlayerT hand provisional player step T
+0x06041ebc func game_StepPlayerU hand provisional player step U
+0x06041fa6 func game_FindTargetLoop hand provisional target search loop
+0x060422ce func game_SetPlayerAttr hand provisional sets player attrs
+0x0604234e func game_SetPlayerPos hand provisional sets player pos
+0x06042454 func game_DistanceCheck hand provisional distance check helper
+0x060424c8 func game_StepPlayerV hand provisional player step V
+0x060425a4 func game_ReadTable hand provisional reads table
+0x06042608 func vdp_UpdateRegsA hand provisional updates VDP regs A
+0x060426d0 func vdp_UpdateRegsB hand provisional updates VDP regs B
+0x0604273c func game_StepPlayerW hand provisional player step W
+0x060427f4 func vdp_UpdateRegsC hand provisional updates VDP regs C
+0x06042814 func game_ClearArrayB hand provisional clears array B
+0x06042852 func text_CopyBytes hand provisional copies bytes
+0x060428d4 func text_ClearLine hand provisional clears line
+0x06042934 func game_SetPlayerAttrB hand provisional sets player attrs B
+0x06042a10 func game_StepPlayerX hand provisional player step X
+0x06042f5c func unit_SetStateA hand provisional sets unit state A
+0x06043076 func unit_SetStateB hand provisional sets unit state B
+0x06043170 func unit_InitA hand provisional inits unit A
+0x0604336c func unit_RunHandler hand provisional runs unit handler
+0x06043586 func unit_ComputeOffset hand provisional computes offset
+0x0604369e func unit_UpdateA hand provisional unit update A
+0x060438ee func unit_UpdateB hand provisional unit update B
+0x06043a6a func unit_UpdateC hand provisional unit update C
+0x06043b98 func unit_ClearA hand provisional clears unit A
+0x06043c02 func unit_ClearB hand provisional clears unit B
+0x06043c8a func unit_QueryA hand provisional unit query A
+0x06043e1c func unit_QueryB hand provisional unit query B
+0x06043fbc func unit_Spawn hand provisional spawns unit
+0x0604410c func unit_SpawnLarge hand provisional large spawn
+0x060444f8 func unit_FindSlot hand provisional finds slot
+0x06044752 func unit_ReadByte hand provisional reads unit byte
+0x06044770 func unit_CheckLimit hand provisional checks limit
+0x0604479a func unit_CheckZero hand provisional checks zero
+0x0604482e func unit_ResetTableA hand provisional resets table A
+0x060448ac func unit_ResetTableB hand provisional resets table B
+0x06044950 func unit_ClearAll hand provisional clears all
+0x060449b6 func unit_UpdateText hand provisional updates text
+0x06044bc2 func unit_CopyTable hand provisional copies table
+0x06044c80 func unit_UpdateD hand provisional unit update D
+0x06044da4 func unit_UpdateE hand provisional unit update E
+0x06044e56 func unit_ClampByMode hand provisional clamps by mode
+0x06044e94 func unit_UpdateF hand provisional unit update F
+0x06044fa4 func unit_BehaviorA hand provisional large behavior A
+0x06045848 func unit_BehaviorB hand provisional large behavior B
+0x06046688 func unit_BehaviorC hand provisional large behavior C
+0x06047426 func unit_BehaviorD hand provisional behavior D
+0x06047992 func unit_BehaviorE hand provisional behavior E
+0x06047f36 func unit_BehaviorF hand provisional behavior F
+0x06048300 func unit_BehaviorG hand provisional behavior G
+0x060487e2 func unit_BehaviorH hand provisional behavior H
+0x06048b70 func unit_SpawnProjectile hand provisional spawns projectile
+0x06048d78 func unit_TryAction hand provisional tries action
+0x06048e38 func unit_AddValue hand provisional adds value
+0x06048ec2 func unit_ClampLow hand provisional clamps low
+0x06048f06 func unit_ClampHigh hand provisional clamps high
+0x06048f54 func unit_RandomCheck hand provisional random check
+0x06048fc2 func unit_ApplyOffset hand provisional applies offset
+0x060490d0 func unit_CheckIdle hand provisional checks idle
+0x0604912a func unit_AimAtTarget hand provisional aims at target
+0x06049310 func unit_BehaviorI hand provisional large behavior I
+0x06049b0e func unit_BehaviorJ hand provisional behavior J
+0x06049eb4 func unit_BehaviorK hand provisional behavior K
+0x0604a2e4 func unit_BehaviorL hand provisional behavior L
+0x0604a53c func unit_GetTargetPos hand provisional gets target pos
+0x0604a6be func unit_ComputeVector hand provisional computes vector
+0x0604a8d8 func unit_ClearFlag hand provisional clears flag
+0x0604a910 func unit_CheckFlag hand provisional checks flag
+0x0604a9bc func unit_SetAttack hand provisional sets attack
+0x0604aab6 func unit_RandomDelay hand provisional random delay
+0x0604ab62 func unit_SetTarget hand provisional sets target
+0x0604ac02 func unit_ClearTarget hand provisional clears target
+0x0604ac80 func unit_RandomState hand provisional random state
+0x0604ad22 func unit_RandomAction hand provisional random action
+0x0604adc4 func unit_RandomMove hand provisional random move
+0x0604ae76 func unit_ClearHandler hand provisional clears handler
+0x0604ae9e func unit_BehaviorM hand provisional behavior M
+0x0604b1f0 func unit_BehaviorN hand provisional behavior N
+0x0604b414 func unit_BehaviorO hand provisional behavior O
+0x0604b754 func unit_BehaviorP hand provisional behavior P
+0x0604baa2 func unit_BehaviorQ hand provisional behavior Q
+0x0604bd90 func unit_BehaviorR hand provisional behavior R
+0x0604ecdc func mem_CopyBytesCount hand provisional copies bytes by count
+0x06097ef0 func snd_ClearFlagB hand provisional clears flag
+0x06098d14 func snd_ProcessEventB hand provisional processes event
+0x06098e64 func snd_WriteRegsB hand provisional writes sound regs
+0x060992be func snd_ReadField hand provisional reads field bits
+0x0609f208 func snd_CopyStateB hand provisional copies state block
+0x0609fe68 func math_StoreMulResultB hand provisional stores MACH MACL
+0x0609fe70 func nop_Stub_9fe70 hand provisional empty function
